@@ -274,6 +274,79 @@ class LinearEfficientEnsemble(nn.Module):
         return x
 
 
+class LinearLoRAEnsemble(nn.Module):
+    """
+    A parameter-efficient ensemble of k linear layers using LoRA-style low-rank adapters.
+
+    Each ensemble member i learns a low-rank delta (A_i, B_i) on top of the shared
+    weight W:
+        output_i = x_i @ W.T + x_i @ A_i.T @ B_i.T + bias_i
+
+    where A_i has shape (rank, in_features) and B_i has shape (out_features, rank).
+    B is zero-initialized so the delta is zero at the start of training.
+    """
+
+    bias: None | Tensor
+
+    def __init__(
+        self,
+        in_features: int,
+        out_features: int,
+        bias: bool = True,
+        *,
+        k: int,
+        rank: int,
+    ):
+        assert k > 0
+        assert rank > 0
+        super().__init__()
+
+        self.weight = nn.Parameter(torch.empty(out_features, in_features))
+        self.lora_A = nn.Parameter(torch.empty(k, rank, in_features))
+        self.lora_B = nn.Parameter(torch.zeros(k, out_features, rank))
+        self.register_parameter(
+            'bias',
+            nn.Parameter(torch.empty(k, out_features)) if bias else None,
+        )
+
+        self.in_features = in_features
+        self.out_features = out_features
+        self.k = k
+        self.rank = rank
+
+        self.reset_parameters()
+
+    def reset_parameters(self):
+        init_rsqrt_uniform_(self.weight, self.in_features)
+        nn.init.normal_(self.lora_A)
+        nn.init.zeros_(self.lora_B)
+        if self.bias is not None:
+            bias_init = torch.empty(
+                self.out_features,
+                dtype=self.weight.dtype,
+                device=self.weight.device,
+            )
+            init_rsqrt_uniform_(bias_init, self.in_features)
+            with torch.inference_mode():
+                self.bias.copy_(bias_init)
+
+    def forward(self, x: Tensor) -> Tensor:
+        # x: (B, K, in_features)
+        assert x.ndim == 3
+
+        out = x @ self.weight.T  # (B, K, out_features)
+
+        # LoRA delta: for each ensemble member i, x_i @ A_i.T @ B_i.T
+        x_t = x.transpose(0, 1)                          # (K, B, in_features)
+        lora = x_t @ self.lora_A.transpose(-1, -2)       # (K, B, rank)
+        lora = lora @ self.lora_B.transpose(-1, -2)      # (K, B, out_features)
+        out = out + lora.transpose(0, 1)                  # (B, K, out_features)
+
+        if self.bias is not None:
+            out = out + self.bias
+        return out
+
+
 def make_efficient_ensemble(module: nn.Module, EnsembleLayer, **kwargs) -> None:
     """Replace linear layers with efficient ensembles of linear layers.
 
