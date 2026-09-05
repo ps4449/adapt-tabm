@@ -16,12 +16,17 @@ B is zero-initialised so the delta starts at zero. Controlled by `rank`.
 
 ## Datasets
 
-All data lives at `paper/data/<dataset>/`. Download on the cluster with:
+All data lives at `paper/data/<dataset>/`. Run the following once on the cluster to download all datasets:
 
 ```bash
 cd ~/adapt-tabm/paper
-python bin/data.py california   # repeat for each dataset
+mkdir -p local data
+wget https://huggingface.co/datasets/rototoHF/tabm-data/resolve/main/data.tar \
+    -O local/tabm-data.tar.gz
+tar -xvf local/tabm-data.tar.gz -C data
 ```
+
+This extracts all datasets into `paper/data/`.
 
 Available: `california`, `adult`, `churn`, `higgs-small`, `covtype2`, `otto`, `diamond`, `house`, `microsoft`, `black-friday`.
 
