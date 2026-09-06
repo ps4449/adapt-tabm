@@ -230,6 +230,202 @@ Taken together, these results suggest that adapter rank is a genuine capacity co
 
 ---
 
+## Experiment #4 - 2026-09-07 - Adapter scale 0.25
+
+**Log:** [`tablora_california_20260907_023250.txt`](../../logs/results/tablora_california_20260907_023250.txt)
+
+**Dataset:** California Housing (`data/california`), regression.
+
+**Metric:** negative RMSE (higher is better).
+
+### Configuration
+
+| Parameter | Value |
+|-----------|-------|
+| arch_type | tabm-lora |
+| k | 32 |
+| rank | 4 |
+| adapter_scale | 0.25 |
+| lora_input_scaling | true |
+| n_blocks | 3 |
+| d_block | 400 |
+| dropout | 0.2077 |
+| optimizer | AdamW |
+| lr | 8.72e-4 |
+| weight_decay | 3.78e-2 |
+| n_parameters | 631,712 |
+
+The adapter-scale assignments follow the user-provided file order; the logs do not print `adapter_scale` or `lora_input_scaling`. Input scaling is recorded from the experiment setup described in this session. Other configuration values are reported at the logs' precision.
+
+### Per-seed Results (15 seeds)
+
+| Seed | Train | Val | Test |
+|------|-------|-----|------|
+| 0 | -0.3444 | -0.4527 | -0.4496 |
+| 1 | -0.3456 | -0.4540 | -0.4498 |
+| 2 | -0.3454 | -0.4520 | -0.4505 |
+| 3 | -0.3171 | -0.4514 | -0.4506 |
+| 4 | -0.3433 | -0.4535 | -0.4505 |
+| 5 | -0.3379 | -0.4544 | -0.4508 |
+| 6 | -0.3400 | -0.4539 | -0.4495 |
+| 7 | -0.3433 | -0.4532 | -0.4499 |
+| 8 | -0.3650 | -0.4563 | -0.4539 |
+| 9 | -0.3429 | -0.4522 | -0.4502 |
+| 10 | -0.3614 | -0.4554 | -0.4533 |
+| 11 | -0.3590 | -0.4567 | -0.4529 |
+| 12 | -0.3357 | -0.4542 | -0.4505 |
+| 13 | -0.3522 | -0.4559 | -0.4520 |
+| 14 | -0.3391 | -0.4526 | -0.4524 |
+| Mean | -0.3448 | -0.4539 | -0.4511 |
+| Std | 0.0113 | 0.0016 | 0.0014 |
+
+### Ensemble Results (size=5)
+
+| Ensemble | Val | Test |
+|----------|-----|------|
+| 0 | -0.4516 | -0.4490 |
+| 1 | -0.4530 | -0.4498 |
+| 2 | -0.4540 | -0.4512 |
+| Mean | Not reported | -0.4500 |
+
+---
+
+## Experiment #5 - 2026-09-07 - Adapter scale 0.5
+
+**Log:** [`tablora_california_20260907_023323.txt`](../../logs/results/tablora_california_20260907_023323.txt)
+
+**Dataset:** California Housing (`data/california`), regression.
+
+**Metric:** negative RMSE (higher is better).
+
+### Configuration
+
+| Parameter | Value |
+|-----------|-------|
+| arch_type | tabm-lora |
+| k | 32 |
+| rank | 4 |
+| adapter_scale | 0.5 |
+| lora_input_scaling | true |
+| n_blocks | 3 |
+| d_block | 400 |
+| dropout | 0.2077 |
+| optimizer | AdamW |
+| lr | 8.72e-4 |
+| weight_decay | 3.78e-2 |
+| n_parameters | 631,712 |
+
+The adapter-scale assignments follow the user-provided file order; the logs do not print `adapter_scale` or `lora_input_scaling`. Input scaling is recorded from the experiment setup described in this session. Other configuration values are reported at the logs' precision.
+
+### Per-seed Results (15 seeds)
+
+| Seed | Train | Val | Test |
+|------|-------|-----|------|
+| 0 | -0.3500 | -0.4548 | -0.4537 |
+| 1 | -0.3567 | -0.4548 | -0.4526 |
+| 2 | -0.3398 | -0.4532 | -0.4532 |
+| 3 | -0.3463 | -0.4565 | -0.4542 |
+| 4 | -0.3378 | -0.4545 | -0.4515 |
+| 5 | -0.3513 | -0.4557 | -0.4537 |
+| 6 | -0.3570 | -0.4560 | -0.4520 |
+| 7 | -0.3385 | -0.4542 | -0.4515 |
+| 8 | -0.3490 | -0.4544 | -0.4547 |
+| 9 | -0.3408 | -0.4533 | -0.4513 |
+| 10 | -0.3480 | -0.4552 | -0.4530 |
+| 11 | -0.3612 | -0.4564 | -0.4558 |
+| 12 | -0.3604 | -0.4591 | -0.4561 |
+| 13 | -0.3546 | -0.4577 | -0.4552 |
+| 14 | -0.3638 | -0.4578 | -0.4563 |
+| Mean | -0.3503 | -0.4556 | -0.4536 |
+| Std | 0.0083 | 0.0016 | 0.0016 |
+
+### Ensemble Results (size=5)
+
+| Ensemble | Val | Test |
+|----------|-----|------|
+| 0 | -0.4539 | -0.4522 |
+| 1 | -0.4539 | -0.4517 |
+| 2 | -0.4564 | -0.4544 |
+| Mean | Not reported | -0.4528 |
+
+---
+
+## Experiment #6 - 2026-09-07 - Adapter scale 1.0
+
+**Log:** [`tablora_california_20260907_015913.txt`](../../logs/results/tablora_california_20260907_015913.txt)
+
+**Dataset:** California Housing (`data/california`), regression.
+
+**Metric:** negative RMSE (higher is better).
+
+### Configuration
+
+| Parameter | Value |
+|-----------|-------|
+| arch_type | tabm-lora |
+| k | 32 |
+| rank | 4 |
+| adapter_scale | 1.0 |
+| lora_input_scaling | true |
+| n_blocks | 3 |
+| d_block | 400 |
+| dropout | 0.2077 |
+| optimizer | AdamW |
+| lr | 8.72e-4 |
+| weight_decay | 3.78e-2 |
+| n_parameters | 631,712 |
+
+The adapter scale is identified by the user, and input scaling follows the experiment setup described in this session; neither option is printed in the log. This run predates experiments 4 and 5 but is numbered by order of documentation.
+
+### Per-seed Results (15 seeds)
+
+| Seed | Train | Val | Test |
+|------|-------|-----|------|
+| 0 | -0.3564 | -0.4560 | -0.4554 |
+| 1 | -0.3623 | -0.4573 | -0.4546 |
+| 2 | -0.3438 | -0.4552 | -0.4532 |
+| 3 | -0.3621 | -0.4568 | -0.4563 |
+| 4 | -0.3469 | -0.4566 | -0.4543 |
+| 5 | -0.3498 | -0.4570 | -0.4544 |
+| 6 | -0.3572 | -0.4576 | -0.4545 |
+| 7 | -0.3536 | -0.4565 | -0.4546 |
+| 8 | -0.3620 | -0.4582 | -0.4557 |
+| 9 | -0.3541 | -0.4561 | -0.4535 |
+| 10 | -0.3697 | -0.4579 | -0.4566 |
+| 11 | -0.3553 | -0.4570 | -0.4547 |
+| 12 | -0.3570 | -0.4584 | -0.4563 |
+| 13 | -0.3767 | -0.4624 | -0.4599 |
+| 14 | -0.3563 | -0.4568 | -0.4553 |
+| Mean | -0.3576 | -0.4573 | -0.4553 |
+| Std | 0.0081 | 0.0016 | 0.0016 |
+
+### Ensemble Results (size=5)
+
+| Ensemble | Val | Test |
+|----------|-----|------|
+| 0 | -0.4557 | -0.4540 |
+| 1 | -0.4563 | -0.4537 |
+| 2 | -0.4576 | -0.4556 |
+| Mean | Not reported | -0.4545 |
+
+---
+
+## Adapter-Scale Comparison
+
+All scores below are negative RMSE (higher is better). All three scale settings are documented in the linked logs in experiments 4-6. All three use rank 4 and input scaling, with 631,712 parameters.
+
+| Adapter scale | Mean Val | Mean Test | Test Std | Ensemble-5 Test |
+|---------------|----------|-----------|----------|-----------------|
+| 1.0 (reference) | -0.4573 | -0.4553 | 0.0016 | -0.4545 |
+| 0.5 | -0.4556 | -0.4536 | 0.0016 | -0.4528 |
+| **0.25** | **-0.4539** | **-0.4511** | **0.0014** | **-0.4500** |
+
+Scale 0.25 has the best mean validation score among these tested settings. Relative to scale 1.0, it improves mean validation score by 0.0034, mean test score by 0.0042, and ensemble-5 test score by 0.0045, without adding parameters. Scale 0.5 is intermediate on all three metrics.
+
+The scale-0.25 model remains behind the tuned TabM baseline by 0.0097 on mean test score and 0.0098 on ensemble-5 test score. These experiments support reducing adapter strength under the current training settings; they do not establish a globally optimal scale or isolate the mechanism. Ensemble-5 averages independently trained models, whereas each individual model already averages its 32 internal heads.
+
+---
+
 ## Master Summary Table
 
 All scores are negative RMSE — **higher is better**.
@@ -241,3 +437,8 @@ All scores are negative RMSE — **higher is better**.
 | 1 | 2026-09-04 | california | 4 | 631,456 | −0.4414 | −0.4988 | −0.0574 | −0.4402 | −0.4915 | −0.0513 |
 | 2 | 2026-09-05 | california | 8 | 888,480 | −0.4414 | −0.4963 | −0.0549 | −0.4402 | −0.4894 | −0.0492 |
 | 3 | 2026-09-06 | california | 16 | 1,402,528 | −0.4414 | −0.4926 | −0.0512 | −0.4402 | −0.4871 | −0.0469 |
+| 4 | 2026-09-07 | california | 4 | 631,712 | -0.4414 | -0.4511 | -0.0097 | -0.4402 | -0.4500 | -0.0098 |
+| 5 | 2026-09-07 | california | 4 | 631,712 | -0.4414 | -0.4536 | -0.0122 | -0.4402 | -0.4528 | -0.0126 |
+| 6 | 2026-09-07 | california | 4 | 631,712 | -0.4414 | -0.4553 | -0.0139 | -0.4402 | -0.4545 | -0.0143 |
+
+Experiments 4 and 5 use input scaling with adapter scales 0.25 and 0.5, respectively; experiment 6 uses input scaling with adapter scale 1.0. Experiments 1-3 are the original rank ablation without input scaling.
