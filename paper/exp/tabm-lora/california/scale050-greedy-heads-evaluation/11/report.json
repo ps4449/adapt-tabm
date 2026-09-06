@@ -1,0 +1,82 @@
+{
+    "function": "bin.model.main",
+    "gpus": [
+        "NVIDIA A40"
+    ],
+    "config": {
+        "seed": 11,
+        "batch_size": 256,
+        "patience": 16,
+        "n_epochs": -1,
+        "gradient_clipping_norm": 1.0,
+        "amp": true,
+        "data": {
+            "cache": true,
+            "path": "data/california",
+            "num_policy": "noisy-quantile"
+        },
+        "optimizer": {
+            "type": "AdamW",
+            "lr": 0.000872489003621806,
+            "weight_decay": 0.03777165108799435
+        },
+        "model": {
+            "arch_type": "tabm-lora",
+            "k": 32,
+            "rank": 4,
+            "adapter_scale": 0.5,
+            "lora_input_scaling": true,
+            "share_training_batches": false,
+            "backbone": {
+                "type": "MLP",
+                "n_blocks": 3,
+                "d_block": 400,
+                "dropout": 0.20769705860329654
+            }
+        }
+    },
+    "n_parameters": 631712,
+    "prediction_type": "labels",
+    "epoch_size": 52,
+    "best_step": 7852,
+    "metrics": {
+        "train": {
+            "rmse": 0.3563143345816208,
+            "mae": 0.24389077723026276,
+            "r2": 0.9057440599442625,
+            "score": -0.3563143345816208
+        },
+        "val": {
+            "rmse": 0.45389525946805565,
+            "mae": 0.2898537814617157,
+            "r2": 0.8419927151141312,
+            "score": -0.45389525946805565
+        },
+        "test": {
+            "rmse": 0.45601490508887493,
+            "mae": 0.29817894101142883,
+            "r2": 0.8405239493564636,
+            "score": -0.45601490508887493
+        }
+    },
+    "time": "0:00:40.559924",
+    "chunk_size": null,
+    "eval_batch_size": 32768,
+    "heads": [
+        26,
+        29,
+        27,
+        30,
+        9,
+        8,
+        11,
+        21,
+        29,
+        7,
+        27,
+        19,
+        30,
+        22
+    ],
+    "head_selection_time": "0:00:00.502005"
+}
