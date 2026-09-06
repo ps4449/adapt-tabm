@@ -1,0 +1,79 @@
+{
+    "function": "bin.model.main",
+    "gpus": [
+        "NVIDIA A40"
+    ],
+    "config": {
+        "seed": 11,
+        "batch_size": 256,
+        "patience": 16,
+        "n_epochs": -1,
+        "gradient_clipping_norm": 1.0,
+        "amp": true,
+        "data": {
+            "cache": true,
+            "path": "data/california",
+            "num_policy": "noisy-quantile"
+        },
+        "optimizer": {
+            "type": "AdamW",
+            "lr": 0.000872489003621806,
+            "weight_decay": 0.03777165108799435
+        },
+        "model": {
+            "arch_type": "tabm-lora",
+            "k": 32,
+            "rank": 4,
+            "share_training_batches": false,
+            "backbone": {
+                "type": "MLP",
+                "n_blocks": 3,
+                "d_block": 400,
+                "dropout": 0.20769705860329654
+            },
+            "num_embeddings": {
+                "type": "PiecewiseLinearEmbeddings",
+                "d_embedding": 24
+            }
+        },
+        "bins": {
+            "n_bins": 48
+        }
+    },
+    "n_parameters": 738208,
+    "prediction_type": "labels",
+    "epoch_size": 52,
+    "best_step": 364,
+    "metrics": {
+        "train": {
+            "rmse": 0.39651581212080045,
+            "mae": 0.27090996503829956,
+            "r2": 0.8832752001560035,
+            "score": -0.39651581212080045
+        },
+        "val": {
+            "rmse": 0.4614612545526609,
+            "mae": 0.30094292759895325,
+            "r2": 0.8366811623801905,
+            "score": -0.4614612545526609
+        },
+        "test": {
+            "rmse": 0.4619973653959729,
+            "mae": 0.3092138469219208,
+            "r2": 0.8363121626366178,
+            "score": -0.4619973653959729
+        }
+    },
+    "time": "0:00:05.823735",
+    "chunk_size": null,
+    "eval_batch_size": 32768,
+    "heads": [
+        6,
+        18,
+        24,
+        27,
+        19,
+        29
+    ],
+    "head_selection_time": "0:00:00.240492"
+}

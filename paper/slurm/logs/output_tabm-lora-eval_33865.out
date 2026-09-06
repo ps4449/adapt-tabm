@@ -1,0 +1,1911 @@
+Evaluation dir: exp/reproduce/train-once/california/0-evaluation
+Node:           TC2N01
+GPU:            0
+====================================================================================================
+[>>>] exp/reproduce/train-once/california/0-evaluation/0 | 2026-09-06 19:06:16.617286
+====================================================================================================
+
+{'seed': 0,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 4,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654},
+           'num_embeddings': {'type': 'PiecewiseLinearEmbeddings', 'd_embedding': 24}},
+ 'bins': {'n_bins': 48}}
+
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:00.000181
+(val) -0.553 (test) -0.557 (loss) 0.39251
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:02.614845
+(val) -0.512 (test) -0.504 (loss) 0.21834
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:02.895394
+(val) -0.495 (test) -0.489 (loss) 0.18514
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:03.176437
+(val) -0.481 (test) -0.475 (loss) 0.16844
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:03.458281
+(val) -0.513 (test) -0.512 (loss) 0.16566
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:03.700488
+(val) -0.477 (test) -0.472 (loss) 0.15811
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:03.980247
+(val) -0.480 (test) -0.474 (loss) 0.14992
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:04.222134
+(val) -0.467 (test) -0.461 (loss) 0.13378
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:04.505732
+(val) -0.472 (test) -0.462 (loss) 0.12226
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:04.748698
+(val) -0.472 (test) -0.462 (loss) 0.11343
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:04.990223
+(val) -0.485 (test) -0.475 (loss) 0.10806
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:05.232856
+(val) -0.478 (test) -0.473 (loss) 0.09598
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:05.474076
+(val) -0.487 (test) -0.477 (loss) 0.08802
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:05.715239
+(val) -0.488 (test) -0.479 (loss) 0.08038
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:05.957341
+(val) -0.485 (test) -0.472 (loss) 0.07275
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:06.198958
+(val) -0.483 (test) -0.474 (loss) 0.06563
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:06.441635
+(val) -0.488 (test) -0.481 (loss) 0.05968
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:06.684115
+(val) -0.490 (test) -0.481 (loss) 0.05474
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:06.929524
+(val) -0.491 (test) -0.485 (loss) 0.04998
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:07.170844
+(val) -0.490 (test) -0.485 (loss) 0.04581
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:07.413496
+(val) -0.488 (test) -0.484 (loss) 0.04236
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:07.656321
+(val) -0.490 (test) -0.490 (loss) 0.03941
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:07.898048
+(val) -0.492 (test) -0.488 (loss) 0.03744
+
+[...] exp/reproduce/train-once/california/0-evaluation/0 | 0:00:08.140357
+(val) -0.489 (test) -0.487 (loss) 0.03478
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-best-head-evaluation/0 | 2026-09-06 19:06:27.847614
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-greedy-heads-evaluation/0 | 2026-09-06 19:06:27.890174
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 738208,
+ 'scores': {'train': -0.3836714003646795,
+            'val': -0.46699869110671416,
+            'test': -0.46131487123990866},
+ 'time': '0:00:08.381095'}
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-evaluation/0 | 2026-09-06 19:06:27.893613
+====================================================================================================
+====================================================================================================
+[>>>] exp/reproduce/train-once/california/0-evaluation/1 | 2026-09-06 19:06:27.897001
+====================================================================================================
+
+{'seed': 1,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 4,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654},
+           'num_embeddings': {'type': 'PiecewiseLinearEmbeddings', 'd_embedding': 24}},
+ 'bins': {'n_bins': 48}}
+
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:00.000158
+(val) -0.549 (test) -0.553 (loss) 0.38142
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:00.931272
+(val) -0.513 (test) -0.508 (loss) 0.21389
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:01.221161
+(val) -0.493 (test) -0.492 (loss) 0.18535
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:01.506315
+(val) -0.490 (test) -0.489 (loss) 0.17031
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:01.795637
+(val) -0.491 (test) -0.490 (loss) 0.17547
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:02.048945
+(val) -0.484 (test) -0.483 (loss) 0.15419
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:02.335791
+(val) -0.469 (test) -0.469 (loss) 0.14355
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:02.626202
+(val) -0.476 (test) -0.476 (loss) 0.13329
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:02.879878
+(val) -0.468 (test) -0.467 (loss) 0.12675
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:03.166556
+(val) -0.484 (test) -0.482 (loss) 0.11425
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:03.419166
+(val) -0.475 (test) -0.475 (loss) 0.11469
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:03.672580
+(val) -0.486 (test) -0.482 (loss) 0.10735
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:03.925159
+(val) -0.486 (test) -0.481 (loss) 0.10145
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:04.177596
+(val) -0.477 (test) -0.476 (loss) 0.09604
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:04.433765
+(val) -0.489 (test) -0.489 (loss) 0.09033
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:04.685576
+(val) -0.480 (test) -0.474 (loss) 0.08072
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:04.938174
+(val) -0.478 (test) -0.477 (loss) 0.07040
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:05.189976
+(val) -0.480 (test) -0.481 (loss) 0.06325
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:05.441573
+(val) -0.485 (test) -0.485 (loss) 0.05714
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:05.694298
+(val) -0.484 (test) -0.485 (loss) 0.05191
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:05.947757
+(val) -0.486 (test) -0.486 (loss) 0.04764
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:06.199674
+(val) -0.490 (test) -0.490 (loss) 0.04387
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:06.451139
+(val) -0.487 (test) -0.486 (loss) 0.04102
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:06.703631
+(val) -0.488 (test) -0.488 (loss) 0.03796
+
+[...] exp/reproduce/train-once/california/0-evaluation/1 | 0:00:06.957910
+(val) -0.486 (test) -0.487 (loss) 0.03590
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-best-head-evaluation/1 | 2026-09-06 19:06:35.305419
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-greedy-heads-evaluation/1 | 2026-09-06 19:06:35.412346
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 738208,
+ 'scores': {'train': -0.37081067180327537,
+            'val': -0.468222082407665,
+            'test': -0.4672640932252871},
+ 'time': '0:00:07.211995'}
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-evaluation/1 | 2026-09-06 19:06:35.416074
+====================================================================================================
+====================================================================================================
+[>>>] exp/reproduce/train-once/california/0-evaluation/2 | 2026-09-06 19:06:35.418906
+====================================================================================================
+
+{'seed': 2,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 4,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654},
+           'num_embeddings': {'type': 'PiecewiseLinearEmbeddings', 'd_embedding': 24}},
+ 'bins': {'n_bins': 48}}
+
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:00.000151
+(val) -0.548 (test) -0.553 (loss) 0.38219
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:00.290506
+(val) -0.519 (test) -0.514 (loss) 0.21615
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:00.569940
+(val) -0.499 (test) -0.492 (loss) 0.18799
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:00.848894
+(val) -0.488 (test) -0.487 (loss) 0.17539
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:01.126825
+(val) -0.476 (test) -0.474 (loss) 0.16282
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:01.407075
+(val) -0.473 (test) -0.469 (loss) 0.15111
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:01.687385
+(val) -0.470 (test) -0.469 (loss) 0.14151
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:02.071187
+(val) -0.462 (test) -0.465 (loss) 0.13249
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:02.366188
+(val) -0.462 (test) -0.461 (loss) 0.12277
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:02.610359
+(val) -0.463 (test) -0.461 (loss) 0.11159
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:02.854341
+(val) -0.470 (test) -0.467 (loss) 0.10477
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:03.098304
+(val) -0.474 (test) -0.472 (loss) 0.09735
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:03.341930
+(val) -0.474 (test) -0.471 (loss) 0.08632
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:03.587919
+(val) -0.475 (test) -0.472 (loss) 0.07861
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:03.833005
+(val) -0.483 (test) -0.480 (loss) 0.07197
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:04.077104
+(val) -0.481 (test) -0.480 (loss) 0.06524
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:04.320993
+(val) -0.482 (test) -0.481 (loss) 0.05981
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:04.565401
+(val) -0.484 (test) -0.487 (loss) 0.05416
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:04.810214
+(val) -0.485 (test) -0.489 (loss) 0.05335
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:05.053503
+(val) -0.485 (test) -0.487 (loss) 0.04928
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:05.296559
+(val) -0.485 (test) -0.487 (loss) 0.04365
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:05.540295
+(val) -0.486 (test) -0.488 (loss) 0.04055
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:05.783193
+(val) -0.487 (test) -0.491 (loss) 0.03817
+
+[...] exp/reproduce/train-once/california/0-evaluation/2 | 0:00:06.025781
+(val) -0.483 (test) -0.488 (loss) 0.03581
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-best-head-evaluation/2 | 2026-09-06 19:06:41.880495
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-greedy-heads-evaluation/2 | 2026-09-06 19:06:41.972766
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 738208,
+ 'scores': {'train': -0.3833476432776113,
+            'val': -0.4618561206309229,
+            'test': -0.46467523164850605},
+ 'time': '0:00:06.267962'}
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-evaluation/2 | 2026-09-06 19:06:41.976359
+====================================================================================================
+====================================================================================================
+[>>>] exp/reproduce/train-once/california/0-evaluation/3 | 2026-09-06 19:06:41.979520
+====================================================================================================
+
+{'seed': 3,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 4,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654},
+           'num_embeddings': {'type': 'PiecewiseLinearEmbeddings', 'd_embedding': 24}},
+ 'bins': {'n_bins': 48}}
+
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:00.000150
+(val) -0.553 (test) -0.554 (loss) 0.38675
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:00.291153
+(val) -0.512 (test) -0.506 (loss) 0.21458
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:00.569002
+(val) -0.515 (test) -0.510 (loss) 0.19195
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:00.813231
+(val) -0.484 (test) -0.479 (loss) 0.17292
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:01.097159
+(val) -0.489 (test) -0.482 (loss) 0.16572
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:01.341331
+(val) -0.478 (test) -0.474 (loss) 0.15943
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:01.620614
+(val) -0.489 (test) -0.485 (loss) 0.15048
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:01.865464
+(val) -0.467 (test) -0.460 (loss) 0.14028
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:02.148356
+(val) -0.470 (test) -0.465 (loss) 0.12532
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:02.392531
+(val) -0.463 (test) -0.463 (loss) 0.11496
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:02.671356
+(val) -0.471 (test) -0.469 (loss) 0.10218
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:02.917035
+(val) -0.473 (test) -0.471 (loss) 0.09192
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:03.160743
+(val) -0.475 (test) -0.475 (loss) 0.08320
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:03.404616
+(val) -0.478 (test) -0.478 (loss) 0.07326
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:03.649696
+(val) -0.484 (test) -0.484 (loss) 0.06616
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:03.894063
+(val) -0.487 (test) -0.489 (loss) 0.05995
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:04.138112
+(val) -0.491 (test) -0.488 (loss) 0.05549
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:04.382262
+(val) -0.491 (test) -0.488 (loss) 0.05009
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:04.626462
+(val) -0.490 (test) -0.488 (loss) 0.04645
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:04.871438
+(val) -0.497 (test) -0.496 (loss) 0.04281
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:05.115606
+(val) -0.489 (test) -0.483 (loss) 0.04047
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:05.359618
+(val) -0.492 (test) -0.488 (loss) 0.03693
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:05.603607
+(val) -0.494 (test) -0.491 (loss) 0.03496
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:05.851533
+(val) -0.491 (test) -0.486 (loss) 0.03306
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:06.095580
+(val) -0.492 (test) -0.488 (loss) 0.03151
+
+[...] exp/reproduce/train-once/california/0-evaluation/3 | 0:00:06.339866
+(val) -0.492 (test) -0.486 (loss) 0.02980
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-best-head-evaluation/3 | 2026-09-06 19:06:48.758999
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-greedy-heads-evaluation/3 | 2026-09-06 19:06:49.132167
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 738208,
+ 'scores': {'train': -0.344462663826016,
+            'val': -0.4630366710647492,
+            'test': -0.46266827292958224},
+ 'time': '0:00:06.584331'}
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-evaluation/3 | 2026-09-06 19:06:49.135892
+====================================================================================================
+====================================================================================================
+[>>>] exp/reproduce/train-once/california/0-evaluation/4 | 2026-09-06 19:06:49.138937
+====================================================================================================
+
+{'seed': 4,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 4,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654},
+           'num_embeddings': {'type': 'PiecewiseLinearEmbeddings', 'd_embedding': 24}},
+ 'bins': {'n_bins': 48}}
+
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:00.000152
+(val) -0.548 (test) -0.549 (loss) 0.37887
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:00.290386
+(val) -0.511 (test) -0.502 (loss) 0.21222
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:00.570825
+(val) -0.499 (test) -0.491 (loss) 0.18830
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:00.848520
+(val) -0.485 (test) -0.481 (loss) 0.17228
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:01.127947
+(val) -0.486 (test) -0.483 (loss) 0.16051
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:01.380215
+(val) -0.487 (test) -0.484 (loss) 0.15578
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:01.625824
+(val) -0.495 (test) -0.489 (loss) 0.15287
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:01.878559
+(val) -0.471 (test) -0.466 (loss) 0.14574
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:02.158030
+(val) -0.467 (test) -0.465 (loss) 0.12888
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:02.541555
+(val) -0.472 (test) -0.465 (loss) 0.11806
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:02.786609
+(val) -0.476 (test) -0.469 (loss) 0.10878
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:03.030731
+(val) -0.478 (test) -0.472 (loss) 0.10207
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:03.273051
+(val) -0.484 (test) -0.476 (loss) 0.09078
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:03.515047
+(val) -0.481 (test) -0.473 (loss) 0.08210
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:03.758006
+(val) -0.480 (test) -0.475 (loss) 0.07544
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:04.000480
+(val) -0.478 (test) -0.475 (loss) 0.06740
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:04.243914
+(val) -0.488 (test) -0.487 (loss) 0.06274
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:04.489473
+(val) -0.480 (test) -0.482 (loss) 0.05617
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:04.736895
+(val) -0.482 (test) -0.482 (loss) 0.05128
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:04.980663
+(val) -0.482 (test) -0.485 (loss) 0.04775
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:05.222631
+(val) -0.482 (test) -0.489 (loss) 0.04444
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:05.464745
+(val) -0.482 (test) -0.488 (loss) 0.04095
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:05.706937
+(val) -0.481 (test) -0.487 (loss) 0.03900
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:05.949034
+(val) -0.484 (test) -0.490 (loss) 0.03713
+
+[...] exp/reproduce/train-once/california/0-evaluation/4 | 0:00:06.191017
+(val) -0.482 (test) -0.487 (loss) 0.03469
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-best-head-evaluation/4 | 2026-09-06 19:06:55.763921
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-greedy-heads-evaluation/4 | 2026-09-06 19:06:55.869854
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 738208,
+ 'scores': {'train': -0.3798735943536337,
+            'val': -0.46703444305277914,
+            'test': -0.46494434774806787},
+ 'time': '0:00:06.432666'}
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-evaluation/4 | 2026-09-06 19:06:55.873888
+====================================================================================================
+====================================================================================================
+[>>>] exp/reproduce/train-once/california/0-evaluation/5 | 2026-09-06 19:06:55.876818
+====================================================================================================
+
+{'seed': 5,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 4,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654},
+           'num_embeddings': {'type': 'PiecewiseLinearEmbeddings', 'd_embedding': 24}},
+ 'bins': {'n_bins': 48}}
+
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:00.000152
+(val) -0.549 (test) -0.553 (loss) 0.38360
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:00.290219
+(val) -0.509 (test) -0.502 (loss) 0.21292
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:00.570407
+(val) -0.494 (test) -0.490 (loss) 0.18622
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:00.853361
+(val) -0.495 (test) -0.494 (loss) 0.17563
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:01.098061
+(val) -0.473 (test) -0.471 (loss) 0.16182
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:01.375057
+(val) -0.465 (test) -0.461 (loss) 0.15006
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:01.658538
+(val) -0.461 (test) -0.460 (loss) 0.13828
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:01.937309
+(val) -0.468 (test) -0.467 (loss) 0.12625
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:02.181407
+(val) -0.459 (test) -0.455 (loss) 0.12617
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:02.466656
+(val) -0.463 (test) -0.459 (loss) 0.10895
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:02.709860
+(val) -0.470 (test) -0.465 (loss) 0.10033
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:02.952238
+(val) -0.500 (test) -0.491 (loss) 0.10049
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:03.194364
+(val) -0.474 (test) -0.466 (loss) 0.09480
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:03.436642
+(val) -0.488 (test) -0.480 (loss) 0.08795
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:03.678676
+(val) -0.494 (test) -0.482 (loss) 0.08356
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:03.920858
+(val) -0.480 (test) -0.467 (loss) 0.07588
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:04.163161
+(val) -0.481 (test) -0.469 (loss) 0.06424
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:04.406437
+(val) -0.486 (test) -0.473 (loss) 0.05869
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:04.656976
+(val) -0.485 (test) -0.471 (loss) 0.05337
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:04.899268
+(val) -0.486 (test) -0.477 (loss) 0.04839
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:05.150676
+(val) -0.486 (test) -0.477 (loss) 0.04434
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:05.394333
+(val) -0.487 (test) -0.476 (loss) 0.04129
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:05.636761
+(val) -0.486 (test) -0.476 (loss) 0.03864
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:05.878929
+(val) -0.487 (test) -0.478 (loss) 0.03648
+
+[...] exp/reproduce/train-once/california/0-evaluation/5 | 0:00:06.121278
+(val) -0.487 (test) -0.478 (loss) 0.03428
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-best-head-evaluation/5 | 2026-09-06 19:07:02.432126
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-greedy-heads-evaluation/5 | 2026-09-06 19:07:02.604041
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 738208,
+ 'scores': {'train': -0.3554032233909402,
+            'val': -0.4587407540992931,
+            'test': -0.4552206053778177},
+ 'time': '0:00:06.364267'}
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-evaluation/5 | 2026-09-06 19:07:02.607525
+====================================================================================================
+====================================================================================================
+[>>>] exp/reproduce/train-once/california/0-evaluation/6 | 2026-09-06 19:07:02.610588
+====================================================================================================
+
+{'seed': 6,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 4,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654},
+           'num_embeddings': {'type': 'PiecewiseLinearEmbeddings', 'd_embedding': 24}},
+ 'bins': {'n_bins': 48}}
+
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:00.000149
+(val) -0.551 (test) -0.555 (loss) 0.39096
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:00.284942
+(val) -0.510 (test) -0.504 (loss) 0.21457
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:00.582179
+(val) -0.498 (test) -0.496 (loss) 0.18536
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:00.865069
+(val) -0.489 (test) -0.482 (loss) 0.17094
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:01.146879
+(val) -0.480 (test) -0.478 (loss) 0.16088
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:01.456906
+(val) -0.475 (test) -0.470 (loss) 0.15176
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:01.738345
+(val) -0.474 (test) -0.466 (loss) 0.14173
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:02.017323
+(val) -0.473 (test) -0.466 (loss) 0.13255
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:02.298786
+(val) -0.474 (test) -0.466 (loss) 0.13173
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:02.545030
+(val) -0.472 (test) -0.462 (loss) 0.11881
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:02.825100
+(val) -0.480 (test) -0.467 (loss) 0.10599
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:03.071194
+(val) -0.481 (test) -0.466 (loss) 0.10032
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:03.316746
+(val) -0.491 (test) -0.473 (loss) 0.08906
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:03.563358
+(val) -0.488 (test) -0.470 (loss) 0.08182
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:03.809051
+(val) -0.493 (test) -0.475 (loss) 0.07537
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:04.054805
+(val) -0.494 (test) -0.479 (loss) 0.07002
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:04.300287
+(val) -0.495 (test) -0.479 (loss) 0.06453
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:04.545958
+(val) -0.491 (test) -0.477 (loss) 0.06104
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:04.791426
+(val) -0.497 (test) -0.482 (loss) 0.05386
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:05.037172
+(val) -0.499 (test) -0.483 (loss) 0.05032
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:05.287654
+(val) -0.495 (test) -0.484 (loss) 0.04655
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:05.534770
+(val) -0.496 (test) -0.485 (loss) 0.04302
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:05.783937
+(val) -0.497 (test) -0.487 (loss) 0.04043
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:06.033288
+(val) -0.495 (test) -0.484 (loss) 0.03849
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:06.276600
+(val) -0.498 (test) -0.488 (loss) 0.03566
+
+[...] exp/reproduce/train-once/california/0-evaluation/6 | 0:00:06.519702
+(val) -0.496 (test) -0.488 (loss) 0.03369
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-best-head-evaluation/6 | 2026-09-06 19:07:09.575688
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-greedy-heads-evaluation/6 | 2026-09-06 19:07:09.714097
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 738208,
+ 'scores': {'train': -0.3475826164018866,
+            'val': -0.4721481334855411,
+            'test': -0.46243493872607455},
+ 'time': '0:00:06.762422'}
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-evaluation/6 | 2026-09-06 19:07:09.718203
+====================================================================================================
+====================================================================================================
+[>>>] exp/reproduce/train-once/california/0-evaluation/7 | 2026-09-06 19:07:09.720945
+====================================================================================================
+
+{'seed': 7,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 4,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654},
+           'num_embeddings': {'type': 'PiecewiseLinearEmbeddings', 'd_embedding': 24}},
+ 'bins': {'n_bins': 48}}
+
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:00.000151
+(val) -0.547 (test) -0.552 (loss) 0.39042
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:00.287203
+(val) -0.532 (test) -0.524 (loss) 0.21417
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:00.574750
+(val) -0.493 (test) -0.489 (loss) 0.18630
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:00.854868
+(val) -0.483 (test) -0.483 (loss) 0.16842
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:01.134288
+(val) -0.504 (test) -0.502 (loss) 0.15624
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:01.377908
+(val) -0.468 (test) -0.466 (loss) 0.15532
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:01.657434
+(val) -0.461 (test) -0.461 (loss) 0.13875
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:01.937019
+(val) -0.466 (test) -0.465 (loss) 0.12999
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:02.181031
+(val) -0.460 (test) -0.459 (loss) 0.12037
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:02.459112
+(val) -0.476 (test) -0.485 (loss) 0.11800
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:02.702832
+(val) -0.464 (test) -0.463 (loss) 0.10863
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:02.946112
+(val) -0.464 (test) -0.463 (loss) 0.10060
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:03.190023
+(val) -0.468 (test) -0.467 (loss) 0.08954
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:03.433649
+(val) -0.473 (test) -0.469 (loss) 0.07959
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:03.676913
+(val) -0.485 (test) -0.480 (loss) 0.07393
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:03.920063
+(val) -0.476 (test) -0.473 (loss) 0.06830
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:04.163229
+(val) -0.477 (test) -0.474 (loss) 0.06060
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:04.406546
+(val) -0.479 (test) -0.476 (loss) 0.05542
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:04.649833
+(val) -0.479 (test) -0.485 (loss) 0.05407
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:04.892951
+(val) -0.479 (test) -0.481 (loss) 0.05007
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:05.137150
+(val) -0.475 (test) -0.476 (loss) 0.04553
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:05.380721
+(val) -0.477 (test) -0.477 (loss) 0.04176
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:05.623725
+(val) -0.476 (test) -0.478 (loss) 0.03958
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:05.866700
+(val) -0.474 (test) -0.480 (loss) 0.03748
+
+[...] exp/reproduce/train-once/california/0-evaluation/7 | 0:00:06.109852
+(val) -0.477 (test) -0.480 (loss) 0.03520
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-best-head-evaluation/7 | 2026-09-06 19:07:16.268694
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-greedy-heads-evaluation/7 | 2026-09-06 19:07:16.375411
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 738208,
+ 'scores': {'train': -0.35856418778645804,
+            'val': -0.4597597755442467,
+            'test': -0.45916843376177335},
+ 'time': '0:00:06.352463'}
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-evaluation/7 | 2026-09-06 19:07:16.379035
+====================================================================================================
+====================================================================================================
+[>>>] exp/reproduce/train-once/california/0-evaluation/8 | 2026-09-06 19:07:16.382044
+====================================================================================================
+
+{'seed': 8,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 4,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654},
+           'num_embeddings': {'type': 'PiecewiseLinearEmbeddings', 'd_embedding': 24}},
+ 'bins': {'n_bins': 48}}
+
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:00.000147
+(val) -0.551 (test) -0.554 (loss) 0.38753
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:00.288588
+(val) -0.515 (test) -0.510 (loss) 0.21570
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:00.573887
+(val) -0.495 (test) -0.491 (loss) 0.18801
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:00.852206
+(val) -0.486 (test) -0.483 (loss) 0.17225
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:01.136488
+(val) -0.486 (test) -0.484 (loss) 0.15806
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:01.415682
+(val) -0.470 (test) -0.465 (loss) 0.14929
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:01.695001
+(val) -0.473 (test) -0.470 (loss) 0.13860
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:01.938962
+(val) -0.497 (test) -0.494 (loss) 0.13403
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:02.183394
+(val) -0.466 (test) -0.466 (loss) 0.13107
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:02.464618
+(val) -0.480 (test) -0.482 (loss) 0.12319
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:02.708245
+(val) -0.490 (test) -0.489 (loss) 0.11690
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:02.952072
+(val) -0.475 (test) -0.475 (loss) 0.11015
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:03.195900
+(val) -0.470 (test) -0.470 (loss) 0.09721
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:03.438943
+(val) -0.471 (test) -0.469 (loss) 0.08583
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:03.682052
+(val) -0.474 (test) -0.472 (loss) 0.07591
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:03.926382
+(val) -0.480 (test) -0.475 (loss) 0.06828
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:04.170531
+(val) -0.480 (test) -0.476 (loss) 0.06060
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:04.414020
+(val) -0.485 (test) -0.480 (loss) 0.05478
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:04.657212
+(val) -0.492 (test) -0.488 (loss) 0.05150
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:04.900434
+(val) -0.487 (test) -0.482 (loss) 0.04722
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:05.144431
+(val) -0.484 (test) -0.480 (loss) 0.04283
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:05.387884
+(val) -0.485 (test) -0.484 (loss) 0.03955
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:05.631009
+(val) -0.487 (test) -0.482 (loss) 0.03735
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:05.874359
+(val) -0.485 (test) -0.483 (loss) 0.03523
+
+[...] exp/reproduce/train-once/california/0-evaluation/8 | 0:00:06.117502
+(val) -0.484 (test) -0.482 (loss) 0.03309
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-best-head-evaluation/8 | 2026-09-06 19:07:22.935660
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-greedy-heads-evaluation/8 | 2026-09-06 19:07:23.007499
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 738208,
+ 'scores': {'train': -0.3704919050518977,
+            'val': -0.4664280923045186,
+            'test': -0.46608095054942694},
+ 'time': '0:00:06.360288'}
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-evaluation/8 | 2026-09-06 19:07:23.010910
+====================================================================================================
+====================================================================================================
+[>>>] exp/reproduce/train-once/california/0-evaluation/9 | 2026-09-06 19:07:23.014374
+====================================================================================================
+
+{'seed': 9,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 4,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654},
+           'num_embeddings': {'type': 'PiecewiseLinearEmbeddings', 'd_embedding': 24}},
+ 'bins': {'n_bins': 48}}
+
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:00.000147
+(val) -0.551 (test) -0.557 (loss) 0.39349
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:00.290077
+(val) -0.512 (test) -0.506 (loss) 0.21592
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:00.571927
+(val) -0.494 (test) -0.489 (loss) 0.18573
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:00.852477
+(val) -0.497 (test) -0.494 (loss) 0.18218
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:01.094805
+(val) -0.512 (test) -0.513 (loss) 0.17266
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:01.336722
+(val) -0.480 (test) -0.478 (loss) 0.16378
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:01.613072
+(val) -0.476 (test) -0.470 (loss) 0.15210
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:01.892335
+(val) -0.469 (test) -0.468 (loss) 0.13759
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:02.172482
+(val) -0.467 (test) -0.469 (loss) 0.12635
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:02.454679
+(val) -0.478 (test) -0.478 (loss) 0.11603
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:02.701436
+(val) -0.494 (test) -0.490 (loss) 0.11451
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:02.948562
+(val) -0.479 (test) -0.478 (loss) 0.10742
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:03.196532
+(val) -0.475 (test) -0.472 (loss) 0.09462
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:03.448373
+(val) -0.485 (test) -0.477 (loss) 0.08359
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:03.694232
+(val) -0.482 (test) -0.474 (loss) 0.07649
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:03.940325
+(val) -0.485 (test) -0.477 (loss) 0.06764
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:04.186297
+(val) -0.493 (test) -0.488 (loss) 0.06217
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:04.432141
+(val) -0.497 (test) -0.486 (loss) 0.05811
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:04.677917
+(val) -0.493 (test) -0.487 (loss) 0.05181
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:04.924940
+(val) -0.494 (test) -0.485 (loss) 0.04751
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:05.171912
+(val) -0.493 (test) -0.485 (loss) 0.04389
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:05.418262
+(val) -0.495 (test) -0.486 (loss) 0.04063
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:05.664265
+(val) -0.493 (test) -0.486 (loss) 0.03788
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:05.910385
+(val) -0.493 (test) -0.485 (loss) 0.03537
+
+[...] exp/reproduce/train-once/california/0-evaluation/9 | 0:00:06.155969
+(val) -0.492 (test) -0.485 (loss) 0.03370
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-best-head-evaluation/9 | 2026-09-06 19:07:29.614284
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-greedy-heads-evaluation/9 | 2026-09-06 19:07:29.753060
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 738208,
+ 'scores': {'train': -0.3699740130409982,
+            'val': -0.4671721446342944,
+            'test': -0.46912959941069954},
+ 'time': '0:00:06.401464'}
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-evaluation/9 | 2026-09-06 19:07:29.762501
+====================================================================================================
+====================================================================================================
+[>>>] exp/reproduce/train-once/california/0-evaluation/10 | 2026-09-06 19:07:29.765800
+====================================================================================================
+
+{'seed': 10,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 4,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654},
+           'num_embeddings': {'type': 'PiecewiseLinearEmbeddings', 'd_embedding': 24}},
+ 'bins': {'n_bins': 48}}
+
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:00.000152
+(val) -0.549 (test) -0.555 (loss) 0.38788
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:00.300464
+(val) -0.515 (test) -0.511 (loss) 0.21545
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:00.577851
+(val) -0.501 (test) -0.497 (loss) 0.19191
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:00.856528
+(val) -0.485 (test) -0.483 (loss) 0.17392
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:01.135241
+(val) -0.483 (test) -0.481 (loss) 0.16185
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:01.412675
+(val) -0.476 (test) -0.472 (loss) 0.15127
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:01.692868
+(val) -0.467 (test) -0.461 (loss) 0.14134
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:01.973923
+(val) -0.473 (test) -0.471 (loss) 0.13111
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:02.220096
+(val) -0.472 (test) -0.471 (loss) 0.13024
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:02.465751
+(val) -0.488 (test) -0.492 (loss) 0.12222
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:02.711223
+(val) -0.467 (test) -0.462 (loss) 0.10989
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:02.992221
+(val) -0.470 (test) -0.465 (loss) 0.09994
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:03.238363
+(val) -0.481 (test) -0.474 (loss) 0.09095
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:03.484048
+(val) -0.472 (test) -0.470 (loss) 0.08258
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:03.730339
+(val) -0.479 (test) -0.476 (loss) 0.07373
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:03.976298
+(val) -0.501 (test) -0.506 (loss) 0.07301
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:04.221971
+(val) -0.476 (test) -0.478 (loss) 0.06595
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:04.467705
+(val) -0.479 (test) -0.483 (loss) 0.05730
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:04.713452
+(val) -0.482 (test) -0.485 (loss) 0.05179
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:04.959403
+(val) -0.482 (test) -0.486 (loss) 0.04761
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:05.205401
+(val) -0.485 (test) -0.488 (loss) 0.04430
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:05.452024
+(val) -0.484 (test) -0.488 (loss) 0.04125
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:05.697834
+(val) -0.486 (test) -0.489 (loss) 0.03818
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:05.943521
+(val) -0.487 (test) -0.491 (loss) 0.03622
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:06.189300
+(val) -0.486 (test) -0.490 (loss) 0.03398
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:06.434941
+(val) -0.487 (test) -0.490 (loss) 0.03252
+
+[...] exp/reproduce/train-once/california/0-evaluation/10 | 0:00:06.680429
+(val) -0.487 (test) -0.493 (loss) 0.03079
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-best-head-evaluation/10 | 2026-09-06 19:07:36.886260
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-greedy-heads-evaluation/10 | 2026-09-06 19:07:37.026709
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 738208,
+ 'scores': {'train': -0.3361880787307061,
+            'val': -0.4665416993693108,
+            'test': -0.46172804847300414},
+ 'time': '0:00:06.925566'}
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-evaluation/10 | 2026-09-06 19:07:37.030195
+====================================================================================================
+====================================================================================================
+[>>>] exp/reproduce/train-once/california/0-evaluation/11 | 2026-09-06 19:07:37.032957
+====================================================================================================
+
+{'seed': 11,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 4,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654},
+           'num_embeddings': {'type': 'PiecewiseLinearEmbeddings', 'd_embedding': 24}},
+ 'bins': {'n_bins': 48}}
+
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:00.000159
+(val) -0.548 (test) -0.554 (loss) 0.38531
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:00.289024
+(val) -0.513 (test) -0.504 (loss) 0.21261
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:00.574010
+(val) -0.513 (test) -0.513 (loss) 0.18377
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:00.853837
+(val) -0.480 (test) -0.480 (loss) 0.17179
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:01.130327
+(val) -0.472 (test) -0.468 (loss) 0.15765
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:01.409187
+(val) -0.479 (test) -0.481 (loss) 0.15207
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:01.652823
+(val) -0.463 (test) -0.462 (loss) 0.14211
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:01.931599
+(val) -0.468 (test) -0.465 (loss) 0.12981
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:02.174786
+(val) -0.480 (test) -0.485 (loss) 0.12222
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:02.417779
+(val) -0.468 (test) -0.466 (loss) 0.11219
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:02.660736
+(val) -0.473 (test) -0.466 (loss) 0.09973
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:02.904156
+(val) -0.486 (test) -0.484 (loss) 0.09286
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:03.148732
+(val) -0.483 (test) -0.474 (loss) 0.08251
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:03.392306
+(val) -0.485 (test) -0.479 (loss) 0.07554
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:03.635639
+(val) -0.493 (test) -0.486 (loss) 0.07961
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:03.878877
+(val) -0.491 (test) -0.482 (loss) 0.06544
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:04.121984
+(val) -0.493 (test) -0.487 (loss) 0.05947
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:04.365723
+(val) -0.495 (test) -0.487 (loss) 0.05540
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:04.608710
+(val) -0.491 (test) -0.483 (loss) 0.04945
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:04.851985
+(val) -0.490 (test) -0.483 (loss) 0.04653
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:05.094983
+(val) -0.490 (test) -0.483 (loss) 0.04410
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:05.338273
+(val) -0.491 (test) -0.481 (loss) 0.04045
+
+[...] exp/reproduce/train-once/california/0-evaluation/11 | 0:00:05.581126
+(val) -0.494 (test) -0.482 (loss) 0.03745
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-best-head-evaluation/11 | 2026-09-06 19:07:43.053835
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-greedy-heads-evaluation/11 | 2026-09-06 19:07:43.259236
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 738208,
+ 'scores': {'train': -0.39667177704249296,
+            'val': -0.46326696814512464,
+            'test': -0.46190204564405696},
+ 'time': '0:00:05.823735'}
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-evaluation/11 | 2026-09-06 19:07:43.263075
+====================================================================================================
+====================================================================================================
+[>>>] exp/reproduce/train-once/california/0-evaluation/12 | 2026-09-06 19:07:43.266026
+====================================================================================================
+
+{'seed': 12,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 4,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654},
+           'num_embeddings': {'type': 'PiecewiseLinearEmbeddings', 'd_embedding': 24}},
+ 'bins': {'n_bins': 48}}
+
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:00.000149
+(val) -0.548 (test) -0.551 (loss) 0.38645
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:00.288622
+(val) -0.511 (test) -0.503 (loss) 0.21247
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:00.568967
+(val) -0.495 (test) -0.491 (loss) 0.18659
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:00.850188
+(val) -0.485 (test) -0.482 (loss) 0.17012
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:01.174444
+(val) -0.480 (test) -0.477 (loss) 0.17037
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:01.481075
+(val) -0.474 (test) -0.472 (loss) 0.15183
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:01.766992
+(val) -0.509 (test) -0.511 (loss) 0.14919
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:02.012313
+(val) -0.479 (test) -0.476 (loss) 0.14336
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:02.257002
+(val) -0.473 (test) -0.470 (loss) 0.13555
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:02.536439
+(val) -0.466 (test) -0.465 (loss) 0.12817
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:02.814995
+(val) -0.473 (test) -0.477 (loss) 0.11350
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:03.059880
+(val) -0.465 (test) -0.465 (loss) 0.10264
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:03.337931
+(val) -0.469 (test) -0.469 (loss) 0.09430
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:03.582171
+(val) -0.472 (test) -0.474 (loss) 0.08322
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:03.826381
+(val) -0.475 (test) -0.476 (loss) 0.07734
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:04.071895
+(val) -0.477 (test) -0.476 (loss) 0.07023
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:04.316530
+(val) -0.480 (test) -0.476 (loss) 0.06277
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:04.560802
+(val) -0.479 (test) -0.479 (loss) 0.05959
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:04.805141
+(val) -0.495 (test) -0.487 (loss) 0.06075
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:05.049700
+(val) -0.499 (test) -0.498 (loss) 0.06010
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:05.293831
+(val) -0.486 (test) -0.480 (loss) 0.05666
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:05.538153
+(val) -0.487 (test) -0.481 (loss) 0.05250
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:05.783198
+(val) -0.484 (test) -0.480 (loss) 0.04290
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:06.027849
+(val) -0.483 (test) -0.479 (loss) 0.03999
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:06.271911
+(val) -0.483 (test) -0.478 (loss) 0.03735
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:06.515927
+(val) -0.483 (test) -0.479 (loss) 0.03532
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:06.762144
+(val) -0.482 (test) -0.478 (loss) 0.03347
+
+[...] exp/reproduce/train-once/california/0-evaluation/12 | 0:00:07.008059
+(val) -0.483 (test) -0.478 (loss) 0.03157
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-best-head-evaluation/12 | 2026-09-06 19:07:50.713721
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-greedy-heads-evaluation/12 | 2026-09-06 19:07:50.918216
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 738208,
+ 'scores': {'train': -0.3216217776380613,
+            'val': -0.46484168236537105,
+            'test': -0.46488987669767384},
+ 'time': '0:00:07.252701'}
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-evaluation/12 | 2026-09-06 19:07:50.921856
+====================================================================================================
+====================================================================================================
+[>>>] exp/reproduce/train-once/california/0-evaluation/13 | 2026-09-06 19:07:50.925392
+====================================================================================================
+
+{'seed': 13,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 4,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654},
+           'num_embeddings': {'type': 'PiecewiseLinearEmbeddings', 'd_embedding': 24}},
+ 'bins': {'n_bins': 48}}
+
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:00.000149
+(val) -0.546 (test) -0.549 (loss) 0.38411
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:00.285865
+(val) -0.508 (test) -0.501 (loss) 0.21106
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:00.568774
+(val) -0.497 (test) -0.490 (loss) 0.18528
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:00.853020
+(val) -0.483 (test) -0.479 (loss) 0.16974
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:01.131566
+(val) -0.503 (test) -0.501 (loss) 0.16452
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:01.375103
+(val) -0.485 (test) -0.479 (loss) 0.15709
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:01.618507
+(val) -0.497 (test) -0.492 (loss) 0.15055
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:01.861682
+(val) -0.469 (test) -0.464 (loss) 0.13899
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:02.139802
+(val) -0.465 (test) -0.461 (loss) 0.12478
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:02.417193
+(val) -0.468 (test) -0.466 (loss) 0.11572
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:02.661501
+(val) -0.470 (test) -0.467 (loss) 0.11702
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:02.904705
+(val) -0.471 (test) -0.467 (loss) 0.10722
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:03.148175
+(val) -0.490 (test) -0.487 (loss) 0.10000
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:03.391434
+(val) -0.473 (test) -0.468 (loss) 0.08844
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:03.634491
+(val) -0.479 (test) -0.474 (loss) 0.07832
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:03.877751
+(val) -0.482 (test) -0.480 (loss) 0.07269
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:04.120999
+(val) -0.485 (test) -0.480 (loss) 0.06326
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:04.365501
+(val) -0.489 (test) -0.482 (loss) 0.05813
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:04.609065
+(val) -0.488 (test) -0.484 (loss) 0.05520
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:04.852422
+(val) -0.486 (test) -0.484 (loss) 0.04899
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:05.095625
+(val) -0.485 (test) -0.485 (loss) 0.04543
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:05.338763
+(val) -0.486 (test) -0.484 (loss) 0.04217
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:05.581829
+(val) -0.486 (test) -0.484 (loss) 0.03903
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:05.825997
+(val) -0.486 (test) -0.486 (loss) 0.03691
+
+[...] exp/reproduce/train-once/california/0-evaluation/13 | 0:00:06.070910
+(val) -0.489 (test) -0.484 (loss) 0.03447
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-best-head-evaluation/13 | 2026-09-06 19:07:57.431527
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-greedy-heads-evaluation/13 | 2026-09-06 19:07:57.634755
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 738208,
+ 'scores': {'train': -0.3653386421084739,
+            'val': -0.4653678792172532,
+            'test': -0.4605499675151866},
+ 'time': '0:00:06.314985'}
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-evaluation/13 | 2026-09-06 19:07:57.638148
+====================================================================================================
+====================================================================================================
+[>>>] exp/reproduce/train-once/california/0-evaluation/14 | 2026-09-06 19:07:57.640853
+====================================================================================================
+
+{'seed': 14,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 4,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654},
+           'num_embeddings': {'type': 'PiecewiseLinearEmbeddings', 'd_embedding': 24}},
+ 'bins': {'n_bins': 48}}
+
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:00.000156
+(val) -0.553 (test) -0.560 (loss) 0.39258
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:00.290631
+(val) -0.510 (test) -0.505 (loss) 0.21746
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:00.571006
+(val) -0.490 (test) -0.486 (loss) 0.18429
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:00.851995
+(val) -0.494 (test) -0.489 (loss) 0.17074
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:01.096666
+(val) -0.471 (test) -0.468 (loss) 0.15646
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:01.377400
+(val) -0.470 (test) -0.464 (loss) 0.14620
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:01.657279
+(val) -0.462 (test) -0.462 (loss) 0.13558
+🌸 New best epoch! 🌸
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:01.936219
+(val) -0.466 (test) -0.462 (loss) 0.12640
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:02.180843
+(val) -0.471 (test) -0.465 (loss) 0.11773
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:02.431424
+(val) -0.465 (test) -0.460 (loss) 0.10986
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:02.679577
+(val) -0.472 (test) -0.466 (loss) 0.10224
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:02.924717
+(val) -0.473 (test) -0.466 (loss) 0.09494
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:03.169411
+(val) -0.477 (test) -0.468 (loss) 0.08938
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:03.415041
+(val) -0.481 (test) -0.470 (loss) 0.07911
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:03.659587
+(val) -0.482 (test) -0.472 (loss) 0.07211
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:03.904560
+(val) -0.490 (test) -0.487 (loss) 0.06873
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:04.150103
+(val) -0.481 (test) -0.478 (loss) 0.06046
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:04.397677
+(val) -0.493 (test) -0.492 (loss) 0.05682
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:04.643659
+(val) -0.491 (test) -0.492 (loss) 0.06133
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:04.887806
+(val) -0.495 (test) -0.494 (loss) 0.05924
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:05.132092
+(val) -0.500 (test) -0.496 (loss) 0.05632
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:05.375630
+(val) -0.485 (test) -0.481 (loss) 0.04825
+
+[...] exp/reproduce/train-once/california/0-evaluation/14 | 0:00:05.618610
+(val) -0.487 (test) -0.485 (loss) 0.04228
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-best-head-evaluation/14 | 2026-09-06 19:08:03.701805
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-greedy-heads-evaluation/14 | 2026-09-06 19:08:03.906867
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 738208,
+ 'scores': {'train': -0.3917735000589915,
+            'val': -0.4618488289899477,
+            'test': -0.46189948093230704},
+ 'time': '0:00:05.861194'}
+
+====================================================================================================
+[<<<] exp/reproduce/train-once/california/0-evaluation/14 | 2026-09-06 19:08:03.910517
+====================================================================================================

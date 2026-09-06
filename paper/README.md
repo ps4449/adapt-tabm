@@ -316,6 +316,8 @@ With Conda:
 
 ```
 conda create --file environment.yaml -n tabm
+OR
+conda env create -f paper/environment.yaml -n tabm
 conda activate tabm
 ```
 

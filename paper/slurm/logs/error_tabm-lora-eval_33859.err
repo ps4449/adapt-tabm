@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/msai/ananyaan001/adapt-tabm/paper/bin/evaluate.py", line 92, in <module>
+    main(**vars(parser.parse_args(sys.argv[1:])))
+  File "/home/msai/ananyaan001/adapt-tabm/paper/bin/evaluate.py", line 76, in main
+    function_(config, output, force=force)
+  File "/home/msai/ananyaan001/adapt-tabm/paper/bin/model.py", line 354, in main
+    config, output = lib.check(config, output, config_type=Config)
+  File "/home/msai/ananyaan001/adapt-tabm/paper/lib/util.py", line 143, in check
+    assert set(config) <= (required_keys | optional_keys), (
+AssertionError: The config has unknown keys: space
