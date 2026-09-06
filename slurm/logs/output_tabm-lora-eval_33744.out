@@ -1,0 +1,2 @@
+Error: evaluation directory argument is required.
+Usage: sbatch slurm/evaluate_tablora.sh <evaluation_dir>

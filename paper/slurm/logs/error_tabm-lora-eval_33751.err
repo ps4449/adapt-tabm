@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/msai/tejasvit001/DL_project/adapt-tabm/paper/lib/data.py", line 16, in <module>
+    from . import env
+ImportError: attempted relative import with no known parent package

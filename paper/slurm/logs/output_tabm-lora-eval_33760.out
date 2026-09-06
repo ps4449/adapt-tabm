@@ -1,0 +1,2744 @@
+Evaluation dir: exp/tabm-lora/california/0-evaluation
+Node:           TC2N01
+GPU:            0
+====================================================================================================
+[>>>] exp/tabm-lora/california/0-evaluation/0 | 2026-09-05 18:30:45.953733
+====================================================================================================
+
+{'seed': 0,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 8,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654}}}
+
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:00.000183
+(val) -0.573 (test) -0.589 (loss) 0.36806
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:08.856379
+(val) -0.554 (test) -0.566 (loss) 0.26823
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:09.105883
+(val) -0.546 (test) -0.557 (loss) 0.25004
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:09.351027
+(val) -0.540 (test) -0.550 (loss) 0.23736
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:09.594724
+(val) -0.533 (test) -0.544 (loss) 0.22625
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:09.840561
+(val) -0.521 (test) -0.532 (loss) 0.21647
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:10.091693
+(val) -0.521 (test) -0.527 (loss) 0.20684
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:10.340460
+(val) -0.515 (test) -0.519 (loss) 0.19863
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:10.593130
+(val) -0.509 (test) -0.514 (loss) 0.19116
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:10.841802
+(val) -0.508 (test) -0.511 (loss) 0.18424
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:11.093151
+(val) -0.503 (test) -0.503 (loss) 0.17816
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:11.335904
+(val) -0.503 (test) -0.505 (loss) 0.17285
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:11.577974
+(val) -0.503 (test) -0.504 (loss) 0.16814
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:11.823694
+(val) -0.505 (test) -0.502 (loss) 0.16383
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:12.029792
+(val) -0.497 (test) -0.498 (loss) 0.15960
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:12.273282
+(val) -0.499 (test) -0.500 (loss) 0.15545
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:12.478703
+(val) -0.498 (test) -0.498 (loss) 0.15267
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:12.684063
+(val) -0.502 (test) -0.496 (loss) 0.14892
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:12.889727
+(val) -0.502 (test) -0.498 (loss) 0.14600
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:13.095171
+(val) -0.501 (test) -0.498 (loss) 0.14288
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:13.300472
+(val) -0.499 (test) -0.496 (loss) 0.13954
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:13.505145
+(val) -0.503 (test) -0.496 (loss) 0.13684
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:13.710323
+(val) -0.500 (test) -0.494 (loss) 0.13446
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:13.915371
+(val) -0.502 (test) -0.497 (loss) 0.13124
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:14.120366
+(val) -0.499 (test) -0.497 (loss) 0.12892
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:14.326180
+(val) -0.500 (test) -0.496 (loss) 0.12627
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:14.533797
+(val) -0.501 (test) -0.499 (loss) 0.12366
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:14.762162
+(val) -0.498 (test) -0.494 (loss) 0.12233
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:14.999220
+(val) -0.501 (test) -0.497 (loss) 0.11973
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:15.239405
+(val) -0.500 (test) -0.495 (loss) 0.11754
+
+[...] exp/tabm-lora/california/0-evaluation/0 | 0:00:15.477606
+(val) -0.502 (test) -0.496 (loss) 0.11559
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-best-head-evaluation/0 | 2026-09-05 18:31:04.256021
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-greedy-heads-evaluation/0 | 2026-09-05 18:31:04.532653
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 888480,
+ 'scores': {'train': -0.40705390398533514,
+            'val': -0.49704348148860245,
+            'test': -0.49827223522300995},
+ 'time': '0:00:15.691600'}
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-evaluation/0 | 2026-09-05 18:31:04.538011
+====================================================================================================
+====================================================================================================
+[>>>] exp/tabm-lora/california/0-evaluation/1 | 2026-09-05 18:31:04.541060
+====================================================================================================
+
+{'seed': 1,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 8,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654}}}
+
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:00.000148
+(val) -0.576 (test) -0.592 (loss) 0.37266
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:01.113122
+(val) -0.558 (test) -0.572 (loss) 0.27207
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:01.374660
+(val) -0.544 (test) -0.559 (loss) 0.25198
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:01.629590
+(val) -0.536 (test) -0.550 (loss) 0.23824
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:01.887947
+(val) -0.529 (test) -0.542 (loss) 0.22620
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:02.143396
+(val) -0.521 (test) -0.532 (loss) 0.21607
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:02.395964
+(val) -0.517 (test) -0.527 (loss) 0.20657
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:02.647958
+(val) -0.515 (test) -0.524 (loss) 0.19910
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:02.903639
+(val) -0.508 (test) -0.513 (loss) 0.19203
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:03.157012
+(val) -0.509 (test) -0.513 (loss) 0.18627
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:03.371244
+(val) -0.508 (test) -0.510 (loss) 0.18090
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:03.591954
+(val) -0.505 (test) -0.508 (loss) 0.17658
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:03.843342
+(val) -0.500 (test) -0.503 (loss) 0.17188
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:04.095399
+(val) -0.502 (test) -0.502 (loss) 0.16862
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:04.315607
+(val) -0.501 (test) -0.503 (loss) 0.16355
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:04.531556
+(val) -0.500 (test) -0.501 (loss) 0.15976
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:04.750401
+(val) -0.500 (test) -0.500 (loss) 0.15626
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:04.967510
+(val) -0.500 (test) -0.500 (loss) 0.15317
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:05.185619
+(val) -0.502 (test) -0.499 (loss) 0.14929
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:05.402452
+(val) -0.501 (test) -0.498 (loss) 0.14742
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:05.620225
+(val) -0.500 (test) -0.496 (loss) 0.14453
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:05.838692
+(val) -0.498 (test) -0.494 (loss) 0.14182
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:06.094266
+(val) -0.497 (test) -0.497 (loss) 0.13883
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:06.355945
+(val) -0.500 (test) -0.495 (loss) 0.13642
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:06.570552
+(val) -0.501 (test) -0.499 (loss) 0.13340
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:06.785250
+(val) -0.503 (test) -0.499 (loss) 0.13108
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:06.999594
+(val) -0.501 (test) -0.499 (loss) 0.12897
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:07.214142
+(val) -0.499 (test) -0.498 (loss) 0.12679
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:07.429628
+(val) -0.503 (test) -0.497 (loss) 0.12432
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:07.646601
+(val) -0.502 (test) -0.499 (loss) 0.12192
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:07.860935
+(val) -0.501 (test) -0.500 (loss) 0.11988
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:08.075327
+(val) -0.503 (test) -0.499 (loss) 0.11857
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:08.289558
+(val) -0.501 (test) -0.499 (loss) 0.11633
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:08.506353
+(val) -0.501 (test) -0.499 (loss) 0.11468
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:08.719852
+(val) -0.496 (test) -0.496 (loss) 0.11283
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:08.978439
+(val) -0.501 (test) -0.498 (loss) 0.11098
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:09.193251
+(val) -0.496 (test) -0.495 (loss) 0.10970
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:09.407459
+(val) -0.500 (test) -0.502 (loss) 0.10743
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:09.621553
+(val) -0.503 (test) -0.502 (loss) 0.10571
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:09.835614
+(val) -0.499 (test) -0.500 (loss) 0.10455
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:10.049245
+(val) -0.497 (test) -0.498 (loss) 0.10295
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:10.263325
+(val) -0.501 (test) -0.500 (loss) 0.10191
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:10.480187
+(val) -0.502 (test) -0.502 (loss) 0.09996
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:10.694181
+(val) -0.497 (test) -0.497 (loss) 0.09925
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:10.908403
+(val) -0.503 (test) -0.502 (loss) 0.09779
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:11.125009
+(val) -0.502 (test) -0.501 (loss) 0.09593
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:11.342997
+(val) -0.505 (test) -0.505 (loss) 0.09479
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:11.560970
+(val) -0.501 (test) -0.502 (loss) 0.09418
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:11.777499
+(val) -0.502 (test) -0.501 (loss) 0.09295
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:11.993402
+(val) -0.505 (test) -0.502 (loss) 0.09110
+
+[...] exp/tabm-lora/california/0-evaluation/1 | 0:00:12.208250
+(val) -0.499 (test) -0.501 (loss) 0.08995
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-best-head-evaluation/1 | 2026-09-05 18:31:17.154761
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-greedy-heads-evaluation/1 | 2026-09-05 18:31:17.396248
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 888480,
+ 'scores': {'train': -0.31767735825342747,
+            'val': -0.49572247406552,
+            'test': -0.49631893123624315},
+ 'time': '0:00:12.422406'}
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-evaluation/1 | 2026-09-05 18:31:17.402493
+====================================================================================================
+====================================================================================================
+[>>>] exp/tabm-lora/california/0-evaluation/2 | 2026-09-05 18:31:17.405804
+====================================================================================================
+
+{'seed': 2,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 8,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654}}}
+
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:00.000145
+(val) -0.573 (test) -0.591 (loss) 0.36807
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:00.252173
+(val) -0.555 (test) -0.569 (loss) 0.26935
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:00.500479
+(val) -0.544 (test) -0.556 (loss) 0.24991
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:00.746917
+(val) -0.537 (test) -0.549 (loss) 0.23665
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:00.997025
+(val) -0.531 (test) -0.542 (loss) 0.22601
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:01.245082
+(val) -0.526 (test) -0.536 (loss) 0.21690
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:01.495085
+(val) -0.520 (test) -0.527 (loss) 0.20709
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:01.740539
+(val) -0.516 (test) -0.521 (loss) 0.19884
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:01.985264
+(val) -0.510 (test) -0.516 (loss) 0.19206
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:02.229098
+(val) -0.513 (test) -0.515 (loss) 0.18586
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:02.435126
+(val) -0.507 (test) -0.510 (loss) 0.17969
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:02.680813
+(val) -0.508 (test) -0.511 (loss) 0.17451
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:02.887048
+(val) -0.507 (test) -0.510 (loss) 0.17045
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:03.134243
+(val) -0.505 (test) -0.505 (loss) 0.16545
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:03.381150
+(val) -0.503 (test) -0.502 (loss) 0.16138
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:03.628452
+(val) -0.505 (test) -0.500 (loss) 0.15752
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:03.836556
+(val) -0.507 (test) -0.503 (loss) 0.15348
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:04.044511
+(val) -0.501 (test) -0.498 (loss) 0.14955
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:04.289106
+(val) -0.505 (test) -0.504 (loss) 0.14673
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:04.495633
+(val) -0.502 (test) -0.498 (loss) 0.14326
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:04.701879
+(val) -0.505 (test) -0.499 (loss) 0.13960
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:04.907930
+(val) -0.502 (test) -0.496 (loss) 0.13628
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:05.114002
+(val) -0.504 (test) -0.500 (loss) 0.13417
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:05.321219
+(val) -0.502 (test) -0.495 (loss) 0.13191
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:05.527371
+(val) -0.503 (test) -0.498 (loss) 0.12867
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:05.733867
+(val) -0.500 (test) -0.495 (loss) 0.12563
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:05.978950
+(val) -0.503 (test) -0.498 (loss) 0.12335
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:06.185338
+(val) -0.502 (test) -0.499 (loss) 0.12085
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:06.391587
+(val) -0.500 (test) -0.495 (loss) 0.11848
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:06.597489
+(val) -0.500 (test) -0.496 (loss) 0.11669
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:06.803480
+(val) -0.500 (test) -0.498 (loss) 0.11421
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:07.009573
+(val) -0.503 (test) -0.500 (loss) 0.11229
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:07.215645
+(val) -0.501 (test) -0.495 (loss) 0.11040
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:07.422747
+(val) -0.503 (test) -0.495 (loss) 0.10899
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:07.629273
+(val) -0.504 (test) -0.497 (loss) 0.10656
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:07.835458
+(val) -0.500 (test) -0.497 (loss) 0.10557
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:08.041354
+(val) -0.503 (test) -0.499 (loss) 0.10343
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:08.247322
+(val) -0.502 (test) -0.497 (loss) 0.10157
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:08.453133
+(val) -0.503 (test) -0.497 (loss) 0.10010
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:08.659014
+(val) -0.501 (test) -0.496 (loss) 0.09919
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:08.866941
+(val) -0.505 (test) -0.499 (loss) 0.09725
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:09.074810
+(val) -0.499 (test) -0.497 (loss) 0.09569
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:09.324979
+(val) -0.502 (test) -0.499 (loss) 0.09426
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:09.534003
+(val) -0.500 (test) -0.499 (loss) 0.09299
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:09.742584
+(val) -0.502 (test) -0.498 (loss) 0.09205
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:09.950277
+(val) -0.501 (test) -0.498 (loss) 0.09060
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:10.161978
+(val) -0.503 (test) -0.499 (loss) 0.08915
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:10.370907
+(val) -0.500 (test) -0.497 (loss) 0.08797
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:10.579045
+(val) -0.504 (test) -0.501 (loss) 0.08697
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:10.786089
+(val) -0.505 (test) -0.501 (loss) 0.08597
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:10.992631
+(val) -0.504 (test) -0.502 (loss) 0.08481
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:11.198995
+(val) -0.504 (test) -0.499 (loss) 0.08392
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:11.405423
+(val) -0.504 (test) -0.502 (loss) 0.08293
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:11.611577
+(val) -0.506 (test) -0.503 (loss) 0.08172
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:11.817491
+(val) -0.507 (test) -0.501 (loss) 0.08023
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:12.023677
+(val) -0.502 (test) -0.500 (loss) 0.07995
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:12.229778
+(val) -0.505 (test) -0.501 (loss) 0.07903
+
+[...] exp/tabm-lora/california/0-evaluation/2 | 0:00:12.436187
+(val) -0.504 (test) -0.502 (loss) 0.07813
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-best-head-evaluation/2 | 2026-09-05 18:31:30.243800
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-greedy-heads-evaluation/2 | 2026-09-05 18:31:30.382605
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 888480,
+ 'scores': {'train': -0.2771140880415149,
+            'val': -0.49858063164419536,
+            'test': -0.496585317055063},
+ 'time': '0:00:12.642247'}
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-evaluation/2 | 2026-09-05 18:31:30.386253
+====================================================================================================
+====================================================================================================
+[>>>] exp/tabm-lora/california/0-evaluation/3 | 2026-09-05 18:31:30.391362
+====================================================================================================
+
+{'seed': 3,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 8,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654}}}
+
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:00.000144
+(val) -0.577 (test) -0.593 (loss) 0.37201
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:00.252593
+(val) -0.556 (test) -0.572 (loss) 0.26984
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:00.497786
+(val) -0.545 (test) -0.557 (loss) 0.25042
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:00.743276
+(val) -0.540 (test) -0.552 (loss) 0.23799
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:00.987467
+(val) -0.529 (test) -0.543 (loss) 0.22751
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:01.244416
+(val) -0.525 (test) -0.538 (loss) 0.21738
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:01.488633
+(val) -0.518 (test) -0.529 (loss) 0.20877
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:01.733444
+(val) -0.514 (test) -0.522 (loss) 0.19987
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:01.981804
+(val) -0.517 (test) -0.524 (loss) 0.19241
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:02.188446
+(val) -0.506 (test) -0.513 (loss) 0.18686
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:02.436628
+(val) -0.504 (test) -0.508 (loss) 0.18072
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:02.682229
+(val) -0.511 (test) -0.512 (loss) 0.17551
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:02.892586
+(val) -0.503 (test) -0.505 (loss) 0.17089
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:03.142540
+(val) -0.504 (test) -0.505 (loss) 0.16604
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:03.351997
+(val) -0.501 (test) -0.500 (loss) 0.16207
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:03.597518
+(val) -0.500 (test) -0.501 (loss) 0.15848
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:03.848334
+(val) -0.505 (test) -0.500 (loss) 0.15446
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:04.059465
+(val) -0.504 (test) -0.502 (loss) 0.15111
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:04.270176
+(val) -0.508 (test) -0.506 (loss) 0.14812
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:04.480063
+(val) -0.502 (test) -0.500 (loss) 0.14477
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:04.689542
+(val) -0.503 (test) -0.499 (loss) 0.14170
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:04.898886
+(val) -0.506 (test) -0.500 (loss) 0.13904
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:05.108390
+(val) -0.503 (test) -0.500 (loss) 0.13641
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:05.317755
+(val) -0.507 (test) -0.503 (loss) 0.13311
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:05.527176
+(val) -0.503 (test) -0.501 (loss) 0.13095
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:05.736828
+(val) -0.504 (test) -0.499 (loss) 0.12846
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:05.946157
+(val) -0.504 (test) -0.500 (loss) 0.12615
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:06.155703
+(val) -0.504 (test) -0.501 (loss) 0.12387
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:06.367044
+(val) -0.506 (test) -0.500 (loss) 0.12143
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:06.577211
+(val) -0.505 (test) -0.500 (loss) 0.11968
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:06.786405
+(val) -0.506 (test) -0.502 (loss) 0.11722
+
+[...] exp/tabm-lora/california/0-evaluation/3 | 0:00:06.995846
+(val) -0.507 (test) -0.503 (loss) 0.11550
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-best-head-evaluation/3 | 2026-09-05 18:31:37.790190
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-greedy-heads-evaluation/3 | 2026-09-05 18:31:37.961186
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 888480,
+ 'scores': {'train': -0.4071445702723503,
+            'val': -0.49985451369816164,
+            'test': -0.5009974127700763},
+ 'time': '0:00:07.204634'}
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-evaluation/3 | 2026-09-05 18:31:37.964734
+====================================================================================================
+====================================================================================================
+[>>>] exp/tabm-lora/california/0-evaluation/4 | 2026-09-05 18:31:37.968057
+====================================================================================================
+
+{'seed': 4,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 8,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654}}}
+
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:00.000146
+(val) -0.574 (test) -0.592 (loss) 0.36982
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:00.256847
+(val) -0.555 (test) -0.568 (loss) 0.26780
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:00.501029
+(val) -0.546 (test) -0.557 (loss) 0.25054
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:00.746332
+(val) -0.542 (test) -0.551 (loss) 0.23822
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:00.991873
+(val) -0.535 (test) -0.545 (loss) 0.22745
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:01.234734
+(val) -0.525 (test) -0.531 (loss) 0.21657
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:01.478889
+(val) -0.520 (test) -0.523 (loss) 0.20702
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:01.736248
+(val) -0.515 (test) -0.519 (loss) 0.19915
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:01.983681
+(val) -0.516 (test) -0.513 (loss) 0.19192
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:02.193418
+(val) -0.508 (test) -0.506 (loss) 0.18501
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:02.444948
+(val) -0.506 (test) -0.505 (loss) 0.17906
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:02.698628
+(val) -0.508 (test) -0.502 (loss) 0.17443
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:02.910895
+(val) -0.505 (test) -0.500 (loss) 0.16896
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:03.162121
+(val) -0.511 (test) -0.502 (loss) 0.16497
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:03.373932
+(val) -0.502 (test) -0.498 (loss) 0.16091
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:03.625020
+(val) -0.508 (test) -0.498 (loss) 0.15714
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:03.837148
+(val) -0.501 (test) -0.493 (loss) 0.15336
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:04.085444
+(val) -0.504 (test) -0.497 (loss) 0.15007
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:04.295583
+(val) -0.507 (test) -0.498 (loss) 0.14683
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:04.505670
+(val) -0.509 (test) -0.498 (loss) 0.14395
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:04.715495
+(val) -0.501 (test) -0.494 (loss) 0.14010
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:04.925330
+(val) -0.503 (test) -0.494 (loss) 0.13701
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:05.135151
+(val) -0.505 (test) -0.499 (loss) 0.13568
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:05.344684
+(val) -0.501 (test) -0.495 (loss) 0.13276
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:05.554274
+(val) -0.505 (test) -0.498 (loss) 0.13073
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:05.763789
+(val) -0.502 (test) -0.494 (loss) 0.12742
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:05.973460
+(val) -0.504 (test) -0.492 (loss) 0.12535
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:06.184186
+(val) -0.501 (test) -0.495 (loss) 0.12340
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:06.393917
+(val) -0.500 (test) -0.494 (loss) 0.12148
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:06.643259
+(val) -0.502 (test) -0.495 (loss) 0.11857
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:06.853156
+(val) -0.502 (test) -0.494 (loss) 0.11660
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:07.063250
+(val) -0.504 (test) -0.496 (loss) 0.11529
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:07.272474
+(val) -0.504 (test) -0.497 (loss) 0.11327
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:07.481897
+(val) -0.505 (test) -0.498 (loss) 0.11100
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:07.691206
+(val) -0.505 (test) -0.499 (loss) 0.10943
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:07.900941
+(val) -0.503 (test) -0.496 (loss) 0.10804
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:08.107447
+(val) -0.501 (test) -0.495 (loss) 0.10608
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:08.313600
+(val) -0.503 (test) -0.497 (loss) 0.10472
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:08.519675
+(val) -0.507 (test) -0.500 (loss) 0.10298
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:08.725880
+(val) -0.504 (test) -0.497 (loss) 0.10188
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:08.931824
+(val) -0.501 (test) -0.497 (loss) 0.10011
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:09.138185
+(val) -0.504 (test) -0.497 (loss) 0.09899
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:09.344536
+(val) -0.507 (test) -0.499 (loss) 0.09679
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:09.552352
+(val) -0.505 (test) -0.498 (loss) 0.09598
+
+[...] exp/tabm-lora/california/0-evaluation/4 | 0:00:09.761689
+(val) -0.506 (test) -0.502 (loss) 0.09462
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-best-head-evaluation/4 | 2026-09-05 18:31:48.127704
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-greedy-heads-evaluation/4 | 2026-09-05 18:31:48.233409
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 888480,
+ 'scores': {'train': -0.3366366474397338,
+            'val': -0.49966174843606875,
+            'test': -0.49418831395354423},
+ 'time': '0:00:09.969040'}
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-evaluation/4 | 2026-09-05 18:31:48.236924
+====================================================================================================
+====================================================================================================
+[>>>] exp/tabm-lora/california/0-evaluation/5 | 2026-09-05 18:31:48.240381
+====================================================================================================
+
+{'seed': 5,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 8,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654}}}
+
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:00.000148
+(val) -0.572 (test) -0.588 (loss) 0.37154
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:00.253441
+(val) -0.553 (test) -0.566 (loss) 0.26855
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:00.510071
+(val) -0.545 (test) -0.556 (loss) 0.25045
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:00.758557
+(val) -0.538 (test) -0.550 (loss) 0.23741
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:01.006306
+(val) -0.533 (test) -0.541 (loss) 0.22611
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:01.253765
+(val) -0.522 (test) -0.532 (loss) 0.21542
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:01.497122
+(val) -0.514 (test) -0.525 (loss) 0.20532
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:01.739630
+(val) -0.515 (test) -0.521 (loss) 0.19766
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:01.946225
+(val) -0.510 (test) -0.515 (loss) 0.19000
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:02.188927
+(val) -0.506 (test) -0.510 (loss) 0.18323
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:02.436915
+(val) -0.506 (test) -0.511 (loss) 0.17810
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:02.643351
+(val) -0.504 (test) -0.506 (loss) 0.17321
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:02.888458
+(val) -0.505 (test) -0.504 (loss) 0.16776
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:03.095560
+(val) -0.504 (test) -0.504 (loss) 0.16400
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:03.340872
+(val) -0.503 (test) -0.502 (loss) 0.15979
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:03.588975
+(val) -0.503 (test) -0.502 (loss) 0.15628
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:03.797000
+(val) -0.499 (test) -0.500 (loss) 0.15223
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:04.044936
+(val) -0.499 (test) -0.498 (loss) 0.14871
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:04.296588
+(val) -0.503 (test) -0.501 (loss) 0.14531
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:04.503481
+(val) -0.501 (test) -0.501 (loss) 0.14266
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:04.709745
+(val) -0.499 (test) -0.497 (loss) 0.13910
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:04.960064
+(val) -0.501 (test) -0.497 (loss) 0.13642
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:05.166545
+(val) -0.500 (test) -0.498 (loss) 0.13316
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:05.374023
+(val) -0.497 (test) -0.495 (loss) 0.13073
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:05.618116
+(val) -0.501 (test) -0.500 (loss) 0.12841
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:05.824810
+(val) -0.501 (test) -0.499 (loss) 0.12535
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:06.031154
+(val) -0.500 (test) -0.497 (loss) 0.12347
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:06.237346
+(val) -0.500 (test) -0.499 (loss) 0.12134
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:06.443588
+(val) -0.500 (test) -0.498 (loss) 0.11890
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:06.649727
+(val) -0.499 (test) -0.497 (loss) 0.11647
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:06.856737
+(val) -0.500 (test) -0.496 (loss) 0.11495
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:07.063428
+(val) -0.502 (test) -0.500 (loss) 0.11293
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:07.269400
+(val) -0.500 (test) -0.498 (loss) 0.11074
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:07.475730
+(val) -0.503 (test) -0.500 (loss) 0.10910
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:07.681708
+(val) -0.502 (test) -0.502 (loss) 0.10748
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:07.888725
+(val) -0.506 (test) -0.501 (loss) 0.10551
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:08.094748
+(val) -0.499 (test) -0.496 (loss) 0.10340
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:08.300903
+(val) -0.499 (test) -0.496 (loss) 0.10213
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:08.507059
+(val) -0.502 (test) -0.501 (loss) 0.10094
+
+[...] exp/tabm-lora/california/0-evaluation/5 | 0:00:08.714958
+(val) -0.505 (test) -0.503 (loss) 0.09925
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-best-head-evaluation/5 | 2026-09-05 18:31:57.355254
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-greedy-heads-evaluation/5 | 2026-09-05 18:31:57.526591
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 888480,
+ 'scores': {'train': -0.3554680792833645,
+            'val': -0.4970108026581596,
+            'test': -0.49544810535701156},
+ 'time': '0:00:08.923323'}
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-evaluation/5 | 2026-09-05 18:31:57.530756
+====================================================================================================
+====================================================================================================
+[>>>] exp/tabm-lora/california/0-evaluation/6 | 2026-09-05 18:31:57.534468
+====================================================================================================
+
+{'seed': 6,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 8,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654}}}
+
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:00.000149
+(val) -0.572 (test) -0.588 (loss) 0.37020
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:00.262224
+(val) -0.555 (test) -0.566 (loss) 0.26748
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:00.510484
+(val) -0.544 (test) -0.556 (loss) 0.25018
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:00.757704
+(val) -0.537 (test) -0.549 (loss) 0.23719
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:01.004449
+(val) -0.530 (test) -0.543 (loss) 0.22750
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:01.254072
+(val) -0.526 (test) -0.537 (loss) 0.21725
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:01.498894
+(val) -0.519 (test) -0.528 (loss) 0.20830
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:01.750463
+(val) -0.516 (test) -0.522 (loss) 0.20034
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:01.995200
+(val) -0.514 (test) -0.519 (loss) 0.19235
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:02.238913
+(val) -0.511 (test) -0.514 (loss) 0.18560
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:02.500201
+(val) -0.506 (test) -0.509 (loss) 0.17954
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:02.749058
+(val) -0.504 (test) -0.506 (loss) 0.17451
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:02.994706
+(val) -0.505 (test) -0.505 (loss) 0.16945
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:03.210856
+(val) -0.503 (test) -0.502 (loss) 0.16435
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:03.457123
+(val) -0.503 (test) -0.504 (loss) 0.16088
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:03.709162
+(val) -0.501 (test) -0.501 (loss) 0.15651
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:03.959945
+(val) -0.501 (test) -0.500 (loss) 0.15303
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:04.206283
+(val) -0.496 (test) -0.498 (loss) 0.14962
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:04.453639
+(val) -0.495 (test) -0.493 (loss) 0.14589
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:04.701130
+(val) -0.498 (test) -0.496 (loss) 0.14219
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:04.908024
+(val) -0.497 (test) -0.497 (loss) 0.13962
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:05.114395
+(val) -0.494 (test) -0.493 (loss) 0.13688
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:05.371581
+(val) -0.499 (test) -0.496 (loss) 0.13372
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:05.578749
+(val) -0.497 (test) -0.497 (loss) 0.13117
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:05.785582
+(val) -0.500 (test) -0.498 (loss) 0.12894
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:05.992366
+(val) -0.500 (test) -0.496 (loss) 0.12684
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:06.198819
+(val) -0.501 (test) -0.498 (loss) 0.12358
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:06.405563
+(val) -0.498 (test) -0.494 (loss) 0.12202
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:06.612243
+(val) -0.500 (test) -0.494 (loss) 0.11925
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:06.822328
+(val) -0.499 (test) -0.494 (loss) 0.11762
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:07.029659
+(val) -0.499 (test) -0.497 (loss) 0.11577
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:07.236178
+(val) -0.498 (test) -0.495 (loss) 0.11414
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:07.442367
+(val) -0.499 (test) -0.497 (loss) 0.11156
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:07.648616
+(val) -0.499 (test) -0.497 (loss) 0.11010
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:07.854838
+(val) -0.501 (test) -0.495 (loss) 0.10817
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:08.061308
+(val) -0.499 (test) -0.497 (loss) 0.10631
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:08.267620
+(val) -0.500 (test) -0.497 (loss) 0.10491
+
+[...] exp/tabm-lora/california/0-evaluation/6 | 0:00:08.474023
+(val) -0.499 (test) -0.495 (loss) 0.10328
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-best-head-evaluation/6 | 2026-09-05 18:32:06.405034
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-greedy-heads-evaluation/6 | 2026-09-05 18:32:06.641966
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 888480,
+ 'scores': {'train': -0.3633566337224506,
+            'val': -0.49388924337407025,
+            'test': -0.4927460362348991},
+ 'time': '0:00:08.680018'}
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-evaluation/6 | 2026-09-05 18:32:06.645840
+====================================================================================================
+====================================================================================================
+[>>>] exp/tabm-lora/california/0-evaluation/7 | 2026-09-05 18:32:06.648728
+====================================================================================================
+
+{'seed': 7,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 8,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654}}}
+
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:00.000142
+(val) -0.571 (test) -0.588 (loss) 0.36471
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:00.250208
+(val) -0.558 (test) -0.570 (loss) 0.26848
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:00.499973
+(val) -0.546 (test) -0.559 (loss) 0.25098
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:00.744637
+(val) -0.539 (test) -0.551 (loss) 0.23836
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:00.992917
+(val) -0.532 (test) -0.545 (loss) 0.22772
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:01.241926
+(val) -0.527 (test) -0.537 (loss) 0.21776
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:01.485928
+(val) -0.520 (test) -0.526 (loss) 0.20901
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:01.734273
+(val) -0.513 (test) -0.517 (loss) 0.20062
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:01.980623
+(val) -0.512 (test) -0.514 (loss) 0.19307
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:02.224333
+(val) -0.509 (test) -0.511 (loss) 0.18669
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:02.468890
+(val) -0.504 (test) -0.505 (loss) 0.18004
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:02.714089
+(val) -0.506 (test) -0.503 (loss) 0.17472
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:02.920827
+(val) -0.503 (test) -0.499 (loss) 0.16991
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:03.173296
+(val) -0.504 (test) -0.501 (loss) 0.16502
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:03.382699
+(val) -0.499 (test) -0.493 (loss) 0.16135
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:03.636731
+(val) -0.503 (test) -0.496 (loss) 0.15714
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:03.847355
+(val) -0.504 (test) -0.497 (loss) 0.15364
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:04.056895
+(val) -0.502 (test) -0.493 (loss) 0.15023
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:04.266623
+(val) -0.498 (test) -0.491 (loss) 0.14622
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:04.514925
+(val) -0.500 (test) -0.493 (loss) 0.14408
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:04.724645
+(val) -0.498 (test) -0.490 (loss) 0.14110
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:04.975025
+(val) -0.502 (test) -0.491 (loss) 0.13815
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:05.184588
+(val) -0.498 (test) -0.488 (loss) 0.13508
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:05.435612
+(val) -0.504 (test) -0.492 (loss) 0.13205
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:05.645802
+(val) -0.500 (test) -0.489 (loss) 0.12926
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:05.855502
+(val) -0.502 (test) -0.490 (loss) 0.12682
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:06.065037
+(val) -0.499 (test) -0.490 (loss) 0.12515
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:06.274404
+(val) -0.504 (test) -0.492 (loss) 0.12208
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:06.483756
+(val) -0.499 (test) -0.489 (loss) 0.12012
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:06.693181
+(val) -0.505 (test) -0.493 (loss) 0.11824
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:06.902876
+(val) -0.503 (test) -0.491 (loss) 0.11665
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:07.112779
+(val) -0.503 (test) -0.490 (loss) 0.11396
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:07.322185
+(val) -0.502 (test) -0.489 (loss) 0.11203
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:07.531561
+(val) -0.502 (test) -0.491 (loss) 0.11037
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:07.740518
+(val) -0.501 (test) -0.491 (loss) 0.10838
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:07.949827
+(val) -0.505 (test) -0.493 (loss) 0.10715
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:08.159044
+(val) -0.503 (test) -0.493 (loss) 0.10529
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:08.368459
+(val) -0.502 (test) -0.492 (loss) 0.10357
+
+[...] exp/tabm-lora/california/0-evaluation/7 | 0:00:08.577654
+(val) -0.501 (test) -0.491 (loss) 0.10212
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-best-head-evaluation/7 | 2026-09-05 18:32:15.625696
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-greedy-heads-evaluation/7 | 2026-09-05 18:32:15.933165
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 888480,
+ 'scores': {'train': -0.3607674862965081,
+            'val': -0.4976246558779667,
+            'test': -0.48796600846721483},
+ 'time': '0:00:08.786550'}
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-evaluation/7 | 2026-09-05 18:32:15.936947
+====================================================================================================
+====================================================================================================
+[>>>] exp/tabm-lora/california/0-evaluation/8 | 2026-09-05 18:32:15.939355
+====================================================================================================
+
+{'seed': 8,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 8,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654}}}
+
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:00.000145
+(val) -0.575 (test) -0.592 (loss) 0.36891
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:00.254814
+(val) -0.558 (test) -0.571 (loss) 0.26845
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:00.502459
+(val) -0.547 (test) -0.560 (loss) 0.25027
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:00.751300
+(val) -0.541 (test) -0.553 (loss) 0.23755
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:00.997544
+(val) -0.531 (test) -0.541 (loss) 0.22732
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:01.249336
+(val) -0.529 (test) -0.538 (loss) 0.21754
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:01.498110
+(val) -0.522 (test) -0.530 (loss) 0.20811
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:01.753080
+(val) -0.517 (test) -0.525 (loss) 0.20008
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:02.003570
+(val) -0.511 (test) -0.518 (loss) 0.19345
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:02.255221
+(val) -0.509 (test) -0.516 (loss) 0.18639
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:02.509640
+(val) -0.510 (test) -0.512 (loss) 0.18047
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:02.721624
+(val) -0.506 (test) -0.509 (loss) 0.17618
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:03.083781
+(val) -0.500 (test) -0.505 (loss) 0.16997
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:03.348166
+(val) -0.504 (test) -0.505 (loss) 0.16584
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:03.560743
+(val) -0.502 (test) -0.502 (loss) 0.16109
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:03.772627
+(val) -0.504 (test) -0.507 (loss) 0.15690
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:03.981792
+(val) -0.505 (test) -0.504 (loss) 0.15325
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:04.190641
+(val) -0.507 (test) -0.504 (loss) 0.14968
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:04.399814
+(val) -0.505 (test) -0.502 (loss) 0.14611
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:04.608932
+(val) -0.501 (test) -0.499 (loss) 0.14264
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:04.820700
+(val) -0.504 (test) -0.499 (loss) 0.14009
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:05.029460
+(val) -0.498 (test) -0.499 (loss) 0.13748
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:05.278788
+(val) -0.503 (test) -0.502 (loss) 0.13398
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:05.488642
+(val) -0.501 (test) -0.498 (loss) 0.13145
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:05.698043
+(val) -0.501 (test) -0.497 (loss) 0.12861
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:05.907254
+(val) -0.502 (test) -0.500 (loss) 0.12645
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:06.116617
+(val) -0.502 (test) -0.501 (loss) 0.12365
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:06.325960
+(val) -0.501 (test) -0.499 (loss) 0.12150
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:06.535238
+(val) -0.505 (test) -0.499 (loss) 0.11916
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:06.744167
+(val) -0.502 (test) -0.500 (loss) 0.11717
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:06.953336
+(val) -0.502 (test) -0.499 (loss) 0.11493
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:07.162501
+(val) -0.501 (test) -0.499 (loss) 0.11332
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:07.371589
+(val) -0.506 (test) -0.502 (loss) 0.11106
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:07.580810
+(val) -0.503 (test) -0.503 (loss) 0.10937
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:07.789604
+(val) -0.505 (test) -0.503 (loss) 0.10775
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:07.998552
+(val) -0.501 (test) -0.503 (loss) 0.10577
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:08.207439
+(val) -0.503 (test) -0.501 (loss) 0.10430
+
+[...] exp/tabm-lora/california/0-evaluation/8 | 0:00:08.416379
+(val) -0.501 (test) -0.501 (loss) 0.10209
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-best-head-evaluation/8 | 2026-09-05 18:32:24.754060
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-greedy-heads-evaluation/8 | 2026-09-05 18:32:24.992389
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 888480,
+ 'scores': {'train': -0.3638543151773623,
+            'val': -0.49839933303069683,
+            'test': -0.49858641477692395},
+ 'time': '0:00:08.624816'}
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-evaluation/8 | 2026-09-05 18:32:24.996102
+====================================================================================================
+====================================================================================================
+[>>>] exp/tabm-lora/california/0-evaluation/9 | 2026-09-05 18:32:24.999283
+====================================================================================================
+
+{'seed': 9,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 8,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654}}}
+
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:00.000151
+(val) -0.572 (test) -0.590 (loss) 0.36794
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:00.254567
+(val) -0.556 (test) -0.569 (loss) 0.26862
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:00.501491
+(val) -0.546 (test) -0.559 (loss) 0.25087
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:00.754968
+(val) -0.537 (test) -0.551 (loss) 0.23875
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:01.006715
+(val) -0.530 (test) -0.543 (loss) 0.22753
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:01.260119
+(val) -0.521 (test) -0.535 (loss) 0.21710
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:01.512752
+(val) -0.520 (test) -0.527 (loss) 0.20859
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:01.764815
+(val) -0.515 (test) -0.521 (loss) 0.19951
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:02.013371
+(val) -0.513 (test) -0.520 (loss) 0.19228
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:02.263389
+(val) -0.503 (test) -0.509 (loss) 0.18619
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:02.516924
+(val) -0.508 (test) -0.510 (loss) 0.18004
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:02.729549
+(val) -0.502 (test) -0.503 (loss) 0.17439
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:02.981805
+(val) -0.501 (test) -0.502 (loss) 0.16983
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:03.233286
+(val) -0.500 (test) -0.500 (loss) 0.16572
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:03.485673
+(val) -0.503 (test) -0.503 (loss) 0.16143
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:03.698010
+(val) -0.499 (test) -0.499 (loss) 0.15747
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:03.949126
+(val) -0.497 (test) -0.499 (loss) 0.15374
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:04.203785
+(val) -0.498 (test) -0.499 (loss) 0.15062
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:04.416813
+(val) -0.499 (test) -0.499 (loss) 0.14728
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:04.628631
+(val) -0.500 (test) -0.497 (loss) 0.14371
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:04.840289
+(val) -0.499 (test) -0.498 (loss) 0.14071
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:05.051991
+(val) -0.501 (test) -0.497 (loss) 0.13782
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:05.263799
+(val) -0.504 (test) -0.501 (loss) 0.13503
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:05.475630
+(val) -0.500 (test) -0.499 (loss) 0.13270
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:05.687398
+(val) -0.498 (test) -0.495 (loss) 0.13040
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:05.899216
+(val) -0.504 (test) -0.499 (loss) 0.12762
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:06.111201
+(val) -0.500 (test) -0.497 (loss) 0.12516
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:06.323194
+(val) -0.499 (test) -0.495 (loss) 0.12247
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:06.535250
+(val) -0.499 (test) -0.495 (loss) 0.12058
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:06.746943
+(val) -0.500 (test) -0.496 (loss) 0.11786
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:06.958710
+(val) -0.503 (test) -0.495 (loss) 0.11625
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:07.170542
+(val) -0.503 (test) -0.498 (loss) 0.11408
+
+[...] exp/tabm-lora/california/0-evaluation/9 | 0:00:07.385182
+(val) -0.505 (test) -0.497 (loss) 0.11165
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-best-head-evaluation/9 | 2026-09-05 18:32:32.791921
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-greedy-heads-evaluation/9 | 2026-09-05 18:32:32.864554
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 888480,
+ 'scores': {'train': -0.39837614222788614,
+            'val': -0.4974840462105841,
+            'test': -0.4994719369210598},
+ 'time': '0:00:07.597403'}
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-evaluation/9 | 2026-09-05 18:32:32.868088
+====================================================================================================
+====================================================================================================
+[>>>] exp/tabm-lora/california/0-evaluation/10 | 2026-09-05 18:32:32.871013
+====================================================================================================
+
+{'seed': 10,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 8,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654}}}
+
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:00.000150
+(val) -0.572 (test) -0.588 (loss) 0.37078
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:00.261106
+(val) -0.556 (test) -0.568 (loss) 0.26803
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:00.513210
+(val) -0.545 (test) -0.556 (loss) 0.25051
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:00.764664
+(val) -0.538 (test) -0.551 (loss) 0.23779
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:01.019001
+(val) -0.532 (test) -0.542 (loss) 0.22669
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:01.274048
+(val) -0.530 (test) -0.538 (loss) 0.21808
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:01.525358
+(val) -0.519 (test) -0.527 (loss) 0.20842
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:01.780977
+(val) -0.517 (test) -0.525 (loss) 0.19948
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:02.034894
+(val) -0.511 (test) -0.515 (loss) 0.19175
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:02.285320
+(val) -0.508 (test) -0.514 (loss) 0.18615
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:02.535567
+(val) -0.504 (test) -0.508 (loss) 0.18034
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:02.789519
+(val) -0.507 (test) -0.510 (loss) 0.17443
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:03.002103
+(val) -0.509 (test) -0.508 (loss) 0.16983
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:03.214021
+(val) -0.505 (test) -0.508 (loss) 0.16481
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:03.425767
+(val) -0.501 (test) -0.504 (loss) 0.16049
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:03.676341
+(val) -0.502 (test) -0.505 (loss) 0.15619
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:03.888748
+(val) -0.500 (test) -0.502 (loss) 0.15299
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:04.137468
+(val) -0.499 (test) -0.500 (loss) 0.14852
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:04.389356
+(val) -0.503 (test) -0.505 (loss) 0.14577
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:04.601962
+(val) -0.498 (test) -0.502 (loss) 0.14185
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:04.854079
+(val) -0.496 (test) -0.502 (loss) 0.13901
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:05.104563
+(val) -0.501 (test) -0.503 (loss) 0.13625
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:05.316869
+(val) -0.499 (test) -0.500 (loss) 0.13350
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:05.528455
+(val) -0.502 (test) -0.503 (loss) 0.13046
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:05.739910
+(val) -0.499 (test) -0.501 (loss) 0.12777
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:05.951427
+(val) -0.499 (test) -0.501 (loss) 0.12536
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:06.163074
+(val) -0.496 (test) -0.500 (loss) 0.12279
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:06.416412
+(val) -0.498 (test) -0.500 (loss) 0.12079
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:06.628869
+(val) -0.498 (test) -0.499 (loss) 0.11846
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:06.841572
+(val) -0.498 (test) -0.503 (loss) 0.11577
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:07.053435
+(val) -0.502 (test) -0.502 (loss) 0.11374
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:07.265450
+(val) -0.497 (test) -0.501 (loss) 0.11164
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:07.476937
+(val) -0.499 (test) -0.501 (loss) 0.10963
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:07.690079
+(val) -0.502 (test) -0.504 (loss) 0.10811
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:07.901872
+(val) -0.502 (test) -0.504 (loss) 0.10674
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:08.113496
+(val) -0.501 (test) -0.504 (loss) 0.10475
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:08.324792
+(val) -0.502 (test) -0.504 (loss) 0.10264
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:08.536492
+(val) -0.503 (test) -0.506 (loss) 0.10150
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:08.748049
+(val) -0.503 (test) -0.505 (loss) 0.09997
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:08.959452
+(val) -0.501 (test) -0.505 (loss) 0.09812
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:09.170859
+(val) -0.503 (test) -0.506 (loss) 0.09677
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:09.382561
+(val) -0.503 (test) -0.506 (loss) 0.09480
+
+[...] exp/tabm-lora/california/0-evaluation/10 | 0:00:09.594342
+(val) -0.502 (test) -0.506 (loss) 0.09399
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-best-head-evaluation/10 | 2026-09-05 18:32:42.876880
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-greedy-heads-evaluation/10 | 2026-09-05 18:32:43.118492
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 888480,
+ 'scores': {'train': -0.33984690697617714,
+            'val': -0.4956103545450753,
+            'test': -0.5002245696722983},
+ 'time': '0:00:09.805633'}
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-evaluation/10 | 2026-09-05 18:32:43.122556
+====================================================================================================
+====================================================================================================
+[>>>] exp/tabm-lora/california/0-evaluation/11 | 2026-09-05 18:32:43.125655
+====================================================================================================
+
+{'seed': 11,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 8,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654}}}
+
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:00.000161
+(val) -0.571 (test) -0.588 (loss) 0.37429
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:00.255703
+(val) -0.555 (test) -0.567 (loss) 0.26930
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:00.505159
+(val) -0.544 (test) -0.556 (loss) 0.25057
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:00.755990
+(val) -0.534 (test) -0.547 (loss) 0.23729
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:01.005930
+(val) -0.530 (test) -0.539 (loss) 0.22585
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:01.257093
+(val) -0.525 (test) -0.533 (loss) 0.21592
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:01.509404
+(val) -0.514 (test) -0.523 (loss) 0.20665
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:01.760301
+(val) -0.517 (test) -0.522 (loss) 0.19845
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:01.972589
+(val) -0.511 (test) -0.515 (loss) 0.19161
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:02.221470
+(val) -0.512 (test) -0.513 (loss) 0.18421
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:02.434131
+(val) -0.505 (test) -0.507 (loss) 0.17885
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:02.694104
+(val) -0.507 (test) -0.506 (loss) 0.17360
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:02.906489
+(val) -0.504 (test) -0.502 (loss) 0.17016
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:03.160477
+(val) -0.503 (test) -0.501 (loss) 0.16567
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:03.410942
+(val) -0.506 (test) -0.504 (loss) 0.16078
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:03.623582
+(val) -0.505 (test) -0.502 (loss) 0.15742
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:03.835645
+(val) -0.502 (test) -0.500 (loss) 0.15323
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:04.086009
+(val) -0.501 (test) -0.498 (loss) 0.14974
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:04.336507
+(val) -0.500 (test) -0.497 (loss) 0.14662
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:04.588706
+(val) -0.501 (test) -0.498 (loss) 0.14391
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:04.800883
+(val) -0.502 (test) -0.500 (loss) 0.14085
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:05.012161
+(val) -0.499 (test) -0.498 (loss) 0.13823
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:05.265375
+(val) -0.498 (test) -0.498 (loss) 0.13553
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:05.519313
+(val) -0.496 (test) -0.495 (loss) 0.13302
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:05.769811
+(val) -0.501 (test) -0.495 (loss) 0.13028
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:05.982483
+(val) -0.500 (test) -0.498 (loss) 0.12809
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:06.194351
+(val) -0.498 (test) -0.495 (loss) 0.12577
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:06.406323
+(val) -0.495 (test) -0.495 (loss) 0.12331
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:06.657117
+(val) -0.494 (test) -0.496 (loss) 0.12041
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:06.910977
+(val) -0.502 (test) -0.498 (loss) 0.11858
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:07.120464
+(val) -0.500 (test) -0.497 (loss) 0.11682
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:07.329295
+(val) -0.499 (test) -0.498 (loss) 0.11475
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:07.537652
+(val) -0.498 (test) -0.496 (loss) 0.11288
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:07.746391
+(val) -0.499 (test) -0.498 (loss) 0.11112
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:07.954854
+(val) -0.502 (test) -0.498 (loss) 0.10936
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:08.163787
+(val) -0.502 (test) -0.500 (loss) 0.10771
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:08.372275
+(val) -0.498 (test) -0.497 (loss) 0.10611
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:08.581004
+(val) -0.500 (test) -0.499 (loss) 0.10421
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:08.789608
+(val) -0.500 (test) -0.499 (loss) 0.10259
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:08.998110
+(val) -0.501 (test) -0.501 (loss) 0.10092
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:09.206946
+(val) -0.497 (test) -0.498 (loss) 0.09960
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:09.415685
+(val) -0.500 (test) -0.499 (loss) 0.09820
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:09.624517
+(val) -0.501 (test) -0.501 (loss) 0.09632
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:09.833121
+(val) -0.501 (test) -0.502 (loss) 0.09537
+
+[...] exp/tabm-lora/california/0-evaluation/11 | 0:00:10.041851
+(val) -0.503 (test) -0.502 (loss) 0.09432
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-best-head-evaluation/11 | 2026-09-05 18:32:53.567568
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-greedy-heads-evaluation/11 | 2026-09-05 18:32:53.840251
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 888480,
+ 'scores': {'train': -0.3329027407271521,
+            'val': -0.49400448337250197,
+            'test': -0.49588918598405096},
+ 'time': '0:00:10.249882'}
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-evaluation/11 | 2026-09-05 18:32:53.844058
+====================================================================================================
+====================================================================================================
+[>>>] exp/tabm-lora/california/0-evaluation/12 | 2026-09-05 18:32:53.847031
+====================================================================================================
+
+{'seed': 12,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 8,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654}}}
+
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:00.000172
+(val) -0.571 (test) -0.588 (loss) 0.37119
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:00.254320
+(val) -0.555 (test) -0.569 (loss) 0.26882
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:00.504032
+(val) -0.545 (test) -0.555 (loss) 0.25069
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:00.751776
+(val) -0.535 (test) -0.547 (loss) 0.23757
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:01.001021
+(val) -0.527 (test) -0.539 (loss) 0.22731
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:01.254037
+(val) -0.523 (test) -0.531 (loss) 0.21639
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:01.506659
+(val) -0.515 (test) -0.524 (loss) 0.20739
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:01.750592
+(val) -0.510 (test) -0.516 (loss) 0.19914
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:01.996608
+(val) -0.506 (test) -0.513 (loss) 0.19184
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:02.240880
+(val) -0.505 (test) -0.510 (loss) 0.18523
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:02.487770
+(val) -0.503 (test) -0.505 (loss) 0.17931
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:02.731466
+(val) -0.501 (test) -0.502 (loss) 0.17420
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:02.975592
+(val) -0.499 (test) -0.501 (loss) 0.16935
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:03.221260
+(val) -0.496 (test) -0.498 (loss) 0.16514
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:03.466770
+(val) -0.501 (test) -0.499 (loss) 0.16153
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:03.676551
+(val) -0.501 (test) -0.503 (loss) 0.15776
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:03.885898
+(val) -0.498 (test) -0.499 (loss) 0.15354
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:04.095474
+(val) -0.498 (test) -0.498 (loss) 0.15042
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:04.305234
+(val) -0.502 (test) -0.500 (loss) 0.14754
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:04.514675
+(val) -0.495 (test) -0.495 (loss) 0.14387
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:04.764244
+(val) -0.499 (test) -0.497 (loss) 0.14188
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:04.973858
+(val) -0.498 (test) -0.496 (loss) 0.13853
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:05.183465
+(val) -0.495 (test) -0.496 (loss) 0.13631
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:05.392931
+(val) -0.500 (test) -0.498 (loss) 0.13378
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:05.602102
+(val) -0.499 (test) -0.496 (loss) 0.13032
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:05.811545
+(val) -0.497 (test) -0.493 (loss) 0.12809
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:06.020878
+(val) -0.497 (test) -0.496 (loss) 0.12638
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:06.230311
+(val) -0.499 (test) -0.496 (loss) 0.12371
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:06.439695
+(val) -0.498 (test) -0.494 (loss) 0.12175
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:06.648883
+(val) -0.501 (test) -0.498 (loss) 0.12001
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:06.859780
+(val) -0.500 (test) -0.496 (loss) 0.11754
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:07.071656
+(val) -0.501 (test) -0.498 (loss) 0.11634
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:07.282828
+(val) -0.504 (test) -0.497 (loss) 0.11421
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:07.493934
+(val) -0.503 (test) -0.500 (loss) 0.11223
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:07.705552
+(val) -0.499 (test) -0.498 (loss) 0.11081
+
+[...] exp/tabm-lora/california/0-evaluation/12 | 0:00:07.917115
+(val) -0.501 (test) -0.498 (loss) 0.10872
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-best-head-evaluation/12 | 2026-09-05 18:33:02.172996
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-greedy-heads-evaluation/12 | 2026-09-05 18:33:02.285359
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 888480,
+ 'scores': {'train': -0.3803352466385236,
+            'val': -0.49509903914016073,
+            'test': -0.49492638577616344},
+ 'time': '0:00:08.127897'}
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-evaluation/12 | 2026-09-05 18:33:02.289185
+====================================================================================================
+====================================================================================================
+[>>>] exp/tabm-lora/california/0-evaluation/13 | 2026-09-05 18:33:02.291981
+====================================================================================================
+
+{'seed': 13,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 8,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654}}}
+
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:00.000149
+(val) -0.573 (test) -0.588 (loss) 0.37072
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:00.256036
+(val) -0.555 (test) -0.567 (loss) 0.26862
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:00.508521
+(val) -0.544 (test) -0.555 (loss) 0.24867
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:00.756896
+(val) -0.536 (test) -0.546 (loss) 0.23534
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:01.004852
+(val) -0.527 (test) -0.537 (loss) 0.22394
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:01.256492
+(val) -0.520 (test) -0.528 (loss) 0.21391
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:01.503560
+(val) -0.519 (test) -0.523 (loss) 0.20492
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:01.750412
+(val) -0.513 (test) -0.517 (loss) 0.19749
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:01.998405
+(val) -0.512 (test) -0.513 (loss) 0.18975
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:02.247808
+(val) -0.509 (test) -0.509 (loss) 0.18335
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:02.496935
+(val) -0.511 (test) -0.510 (loss) 0.17773
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:02.707193
+(val) -0.505 (test) -0.502 (loss) 0.17279
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:02.955501
+(val) -0.506 (test) -0.504 (loss) 0.16800
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:03.162030
+(val) -0.503 (test) -0.499 (loss) 0.16417
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:03.404473
+(val) -0.504 (test) -0.502 (loss) 0.15979
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:03.611090
+(val) -0.504 (test) -0.501 (loss) 0.15583
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:03.817630
+(val) -0.504 (test) -0.499 (loss) 0.15237
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:04.024006
+(val) -0.505 (test) -0.499 (loss) 0.14915
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:04.230725
+(val) -0.504 (test) -0.498 (loss) 0.14629
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:04.437401
+(val) -0.502 (test) -0.499 (loss) 0.14260
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:04.682567
+(val) -0.503 (test) -0.497 (loss) 0.14028
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:04.889201
+(val) -0.501 (test) -0.499 (loss) 0.13715
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:05.134008
+(val) -0.504 (test) -0.501 (loss) 0.13444
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:05.340686
+(val) -0.503 (test) -0.498 (loss) 0.13197
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:05.548659
+(val) -0.503 (test) -0.497 (loss) 0.12924
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:05.758070
+(val) -0.501 (test) -0.499 (loss) 0.12671
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:06.006180
+(val) -0.502 (test) -0.499 (loss) 0.12492
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:06.215176
+(val) -0.507 (test) -0.500 (loss) 0.12264
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:06.424339
+(val) -0.502 (test) -0.498 (loss) 0.12013
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:06.632709
+(val) -0.502 (test) -0.498 (loss) 0.11816
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:06.839559
+(val) -0.504 (test) -0.499 (loss) 0.11573
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:07.046385
+(val) -0.503 (test) -0.500 (loss) 0.11385
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:07.252793
+(val) -0.502 (test) -0.499 (loss) 0.11190
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:07.461067
+(val) -0.501 (test) -0.498 (loss) 0.11050
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:07.667505
+(val) -0.500 (test) -0.497 (loss) 0.10829
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:07.915368
+(val) -0.501 (test) -0.498 (loss) 0.10686
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:08.122107
+(val) -0.505 (test) -0.502 (loss) 0.10537
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:08.328480
+(val) -0.504 (test) -0.501 (loss) 0.10399
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:08.534691
+(val) -0.503 (test) -0.499 (loss) 0.10219
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:08.740992
+(val) -0.502 (test) -0.500 (loss) 0.10049
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:08.947266
+(val) -0.505 (test) -0.501 (loss) 0.09937
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:09.153851
+(val) -0.505 (test) -0.501 (loss) 0.09770
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:09.360297
+(val) -0.506 (test) -0.504 (loss) 0.09591
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:09.566725
+(val) -0.506 (test) -0.502 (loss) 0.09517
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:09.773062
+(val) -0.507 (test) -0.504 (loss) 0.09375
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:09.979260
+(val) -0.505 (test) -0.503 (loss) 0.09219
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:10.185597
+(val) -0.507 (test) -0.506 (loss) 0.09118
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:10.392040
+(val) -0.504 (test) -0.502 (loss) 0.09002
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:10.598556
+(val) -0.506 (test) -0.506 (loss) 0.08905
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:10.805213
+(val) -0.505 (test) -0.507 (loss) 0.08794
+
+[...] exp/tabm-lora/california/0-evaluation/13 | 0:00:11.011625
+(val) -0.506 (test) -0.505 (loss) 0.08693
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-best-head-evaluation/13 | 2026-09-05 18:33:13.701923
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-greedy-heads-evaluation/13 | 2026-09-05 18:33:13.907072
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 888480,
+ 'scores': {'train': -0.3085372124560133,
+            'val': -0.499791757610907,
+            'test': -0.49723102841786787},
+ 'time': '0:00:11.217780'}
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-evaluation/13 | 2026-09-05 18:33:13.910522
+====================================================================================================
+====================================================================================================
+[>>>] exp/tabm-lora/california/0-evaluation/14 | 2026-09-05 18:33:13.913079
+====================================================================================================
+
+{'seed': 14,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 8,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654}}}
+
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:00.000145
+(val) -0.570 (test) -0.589 (loss) 0.36897
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:00.253685
+(val) -0.555 (test) -0.571 (loss) 0.26767
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:00.502025
+(val) -0.542 (test) -0.559 (loss) 0.25035
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:00.754332
+(val) -0.535 (test) -0.550 (loss) 0.23818
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:01.004758
+(val) -0.529 (test) -0.544 (loss) 0.22749
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:01.253848
+(val) -0.523 (test) -0.535 (loss) 0.21723
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:01.504128
+(val) -0.516 (test) -0.529 (loss) 0.20882
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:01.755301
+(val) -0.511 (test) -0.520 (loss) 0.20075
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:02.002502
+(val) -0.507 (test) -0.515 (loss) 0.19323
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:02.249297
+(val) -0.510 (test) -0.515 (loss) 0.18768
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:02.459058
+(val) -0.502 (test) -0.507 (loss) 0.18159
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:02.706142
+(val) -0.502 (test) -0.506 (loss) 0.17679
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:02.954939
+(val) -0.505 (test) -0.506 (loss) 0.17174
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:03.166431
+(val) -0.500 (test) -0.502 (loss) 0.16702
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:03.415727
+(val) -0.499 (test) -0.500 (loss) 0.16270
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:03.669130
+(val) -0.499 (test) -0.499 (loss) 0.15869
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:03.879555
+(val) -0.499 (test) -0.497 (loss) 0.15518
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:04.126364
+(val) -0.503 (test) -0.500 (loss) 0.15140
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:04.336228
+(val) -0.500 (test) -0.495 (loss) 0.14793
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:04.546021
+(val) -0.498 (test) -0.495 (loss) 0.14408
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:04.794293
+(val) -0.501 (test) -0.496 (loss) 0.14115
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:05.004445
+(val) -0.500 (test) -0.497 (loss) 0.13813
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:05.216090
+(val) -0.500 (test) -0.495 (loss) 0.13585
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:05.429936
+(val) -0.499 (test) -0.498 (loss) 0.13252
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:05.639846
+(val) -0.497 (test) -0.496 (loss) 0.12876
+🌸 New best epoch! 🌸
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:05.894445
+(val) -0.499 (test) -0.496 (loss) 0.12711
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:06.104512
+(val) -0.498 (test) -0.496 (loss) 0.12445
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:06.317051
+(val) -0.499 (test) -0.497 (loss) 0.12216
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:06.526886
+(val) -0.503 (test) -0.499 (loss) 0.11997
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:06.736727
+(val) -0.501 (test) -0.497 (loss) 0.11782
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:06.946329
+(val) -0.503 (test) -0.502 (loss) 0.11549
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:07.156598
+(val) -0.501 (test) -0.502 (loss) 0.11396
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:07.366501
+(val) -0.503 (test) -0.499 (loss) 0.11201
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:07.576367
+(val) -0.499 (test) -0.499 (loss) 0.11023
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:07.786013
+(val) -0.499 (test) -0.499 (loss) 0.10819
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:07.995876
+(val) -0.502 (test) -0.502 (loss) 0.10671
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:08.205344
+(val) -0.501 (test) -0.502 (loss) 0.10396
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:08.415429
+(val) -0.502 (test) -0.505 (loss) 0.10269
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:08.625153
+(val) -0.502 (test) -0.500 (loss) 0.10099
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:08.836534
+(val) -0.504 (test) -0.503 (loss) 0.09927
+
+[...] exp/tabm-lora/california/0-evaluation/14 | 0:00:09.046503
+(val) -0.501 (test) -0.501 (loss) 0.09814
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-best-head-evaluation/14 | 2026-09-05 18:33:23.356417
+====================================================================================================
+
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-greedy-heads-evaluation/14 | 2026-09-05 18:33:23.462333
+====================================================================================================
+
+{'function': 'bin.model.main',
+ 'gpus': ['NVIDIA A40'],
+ 'n_parameters': 888480,
+ 'scores': {'train': -0.3521307802771985,
+            'val': -0.4974195531278941,
+            'test': -0.49627204754759086},
+ 'time': '0:00:09.255938'}
+
+====================================================================================================
+[<<<] exp/tabm-lora/california/0-evaluation/14 | 2026-09-05 18:33:23.466725
+====================================================================================================

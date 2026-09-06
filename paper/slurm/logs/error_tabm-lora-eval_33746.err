@@ -1,0 +1,20 @@
+/cm/local/apps/slurm/var/spool/job33746/slurm_script: line 31: cd: /home/msai/tejasvit001/adapt-tabm/paper: No such file or directory
+Creating the output
+Traceback (most recent call last):
+  File "/home/msai/tejasvit001/DL_project/adapt-tabm/paper/bin/evaluate.py", line 92, in <module>
+    main(**vars(parser.parse_args(sys.argv[1:])))
+  File "/home/msai/tejasvit001/DL_project/adapt-tabm/paper/bin/evaluate.py", line 76, in main
+    function_(config, output, force=force)
+  File "/home/msai/tejasvit001/DL_project/adapt-tabm/paper/bin/model.py", line 364, in main
+    dataset = lib.data.build_dataset(**config['data'])
+  File "/home/msai/tejasvit001/DL_project/adapt-tabm/paper/lib/data.py", line 388, in build_dataset
+    dataset = Dataset.from_dir(path)
+  File "/home/msai/tejasvit001/DL_project/adapt-tabm/paper/lib/data.py", line 138, in from_dir
+    return Dataset(load_data(path), Task.from_dir(path))
+  File "/home/msai/tejasvit001/DL_project/adapt-tabm/paper/lib/data.py", line 39, in from_dir
+    info = json.loads(path.joinpath('info.json').read_text())
+  File "/home/msai/tejasvit001/.conda/envs/tabm/lib/python3.10/pathlib.py", line 1134, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/home/msai/tejasvit001/.conda/envs/tabm/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/home/msai/tejasvit001/DL_project/adapt-tabm/paper/data/california/info.json'

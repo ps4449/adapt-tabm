@@ -2,28 +2,24 @@
 
 ## Motivation
 
-TabM uses BatchEnsemble to build k ensemble heads cheaply: each head shares a weight matrix W
-and learns only per-head scaling vectors r and s. The per-head capacity is limited to element-wise
-scaling, which is expressive but inflexible in terms of subspace coverage.
+TabM uses BatchEnsemble to build k ensemble heads cheaply: each head shares a weight matrix W and learns only per-head scaling vectors r and s. The per-head capacity is limited to element-wise scaling, which is expressive but inflexible in terms of subspace coverage.
 
-TabLoRA replaces this with LoRA-style low-rank adapters. Each head learns an additive low-rank
-delta (A_i, B_i) on top of the shared W, giving it a richer low-dimensional subspace to
-personalise rather than just scaling activations. The hypothesis is that this leads to more
-diverse and complementary ensemble members.
+TabLoRA replaces this with LoRA-style low-rank adapters. Each head learns an additive low-rank delta (A_i, B_i) on top of the shared W, giving it a richer low-dimensional subspace to personalise rather than just scaling activations. The hypothesis is that this leads to more diverse and complementary ensemble members.
 
 ---
 
 ## Experiment #1 — 2026-09-04
 
-> Log: `logs/results/tablora_california_20260904_214457.txt`
+**Log:** `logs/results/tablora_california_20260904_214457.txt`
 
-**Dataset:** California Housing — regression (median house value), metric: negative RMSE (higher = better).
+**Dataset:** California Housing — regression (median house value)  
+**Metric:** negative RMSE (higher = better)
 
 ### Configuration
 
 | Parameter | TabM (baseline) | TabLoRA |
-|-----------|----------------|---------|
-| arch_type | `tabm` | `tabm-lora` |
+|-----------|-----------------|---------|
+| arch_type | tabm | tabm-lora |
 | k | 32 | 32 |
 | rank | — | 4 |
 | n_blocks | 3 | 3 |
@@ -34,20 +30,20 @@ diverse and complementary ensemble members.
 | n_parameters | 438,688 | 631,456 (+44%) |
 | Hyperparams tuned | Yes (100 Optuna trials) | No — borrowed from TabM |
 
-### Per-seed results (15 seeds)
+### Per-seed Results (15 seeds)
 
 | Seed | TabLoRA Val | TabLoRA Test |
 |------|-------------|--------------|
-| 0  | −0.5024 | −0.5054 |
-| 1  | −0.5004 | −0.5019 |
-| 2  | −0.5015 | −0.5052 |
-| 3  | −0.4982 | −0.4985 |
-| 4  | −0.5011 | −0.5013 |
-| 5  | −0.5017 | −0.4969 |
-| 6  | −0.4975 | −0.4943 |
-| 7  | −0.5000 | −0.4960 |
-| 8  | −0.4993 | −0.5006 |
-| 9  | −0.4973 | −0.4974 |
+| 0 | −0.5024 | −0.5054 |
+| 1 | −0.5004 | −0.5019 |
+| 2 | −0.5015 | −0.5052 |
+| 3 | −0.4982 | −0.4985 |
+| 4 | −0.5011 | −0.5013 |
+| 5 | −0.5017 | −0.4969 |
+| 6 | −0.4975 | −0.4943 |
+| 7 | −0.5000 | −0.4960 |
+| 8 | −0.4993 | −0.5006 |
+| 9 | −0.4973 | −0.4974 |
 | 10 | −0.5012 | −0.4971 |
 | 11 | −0.4993 | −0.5004 |
 | 12 | −0.4997 | −0.4966 |
@@ -57,46 +53,107 @@ diverse and complementary ensemble members.
 ### Summary
 
 | Model | Mean Val | Mean Test | Std (Test) | Ensemble-5 Test |
-|-------|----------|-----------|------------|-----------------|
+|-------|----------|-----------|-----------|-----------------|
 | TabM (baseline) | −0.4458 | −0.4414 | ±0.0012 | −0.4402 |
 | TabLoRA | −0.5003 | −0.4988 | ±0.0034 | −0.4915 |
-| diff. | −0.0545 | −0.0574 | 3× higher | −0.0513 |
+| **diff.** | **−0.0545** | **−0.0574** | **3× higher** | **−0.0513** |
 
 ### Analysis
 
 **Why the gap exists.**
-The TabLoRA run reused hyperparameters tuned specifically for BatchEnsemble dynamics. LoRA
-adapters have a product structure (A × B) that typically benefits from a higher learning rate
-and different regularisation. Running with TabM's lr/wd is effectively mis-specified for the
-new architecture.
+The TabLoRA run reused hyperparameters tuned specifically for BatchEnsemble dynamics. LoRA adapters have a product structure (A × B) that typically benefits from a higher learning rate and different regularisation. Running with TabM's lr/wd is effectively mis-specified for the new architecture.
 
 **Why variance is higher.**
-std ±0.0034 is nearly 3x TabM's ±0.0012. The adapter matrices are sensitive to initialisation
-under this configuration - a sign that rank or regularisation needs tuning.
+std ±0.0034 is nearly 3x TabM's ±0.0012. The adapter matrices are sensitive to initialisation under this configuration - a sign that rank or regularisation needs tuning.
 
 **Parameter count.**
-At rank=4, TabLoRA uses 192K more parameters than TabM (+44%). This is partly structural: each
-LoRA delta costs rank × (in + out) vs BatchEnsemble's in + out. Rank=2 would bring this to
-~+25% — worth testing before concluding LoRA is less efficient.
+At rank=4, TabLoRA uses 192K more parameters than TabM (+44%). This is partly structural: each LoRA delta costs rank × (in + out) vs BatchEnsemble's in + out. Rank=2 would bring this to ~+25% — worth testing before concluding LoRA is less efficient.
 
 **Ensemble diversity.**
-Ensemble-5 (−0.4915) is noticeably better than the single-model mean (−0.4988), confirming
-heads are still learning diverse solutions despite the overall gap.
+Ensemble-5 (−0.4915) is noticeably better than the single-model mean (−0.4988), confirming heads are still learning diverse solutions despite the overall gap.
 
 ---
 
-## Experiment #2 — 2026-09-06
+## Experiment #2 — 2026-09-05
 
-> Log: `logs/results/tablora_california_20260906_153246.txt`
-> Config: `california/0-evaluation/0-rank16.toml`
+**Dataset:** California Housing — regression (median house value)  
+**Metric:** negative RMSE (higher = better)
 
-**Dataset:** California Housing — regression (median house value), metric: negative RMSE (higher = better).
+### Configuration
+
+| Parameter | TabM (baseline) | TabLoRA |
+|-----------|-----------------|---------|
+| arch_type | tabm | tabm-lora |
+| k | 32 | 32 |
+| rank | — | 8 |
+| n_blocks | 3 | 3 |
+| d_block | 400 | 400 |
+| dropout | 0.2077 | 0.2077 |
+| lr | 8.72e-4 | 8.72e-4 |
+| weight_decay | 3.78e-2 | 3.78e-2 |
+| n_parameters | 438,688 | 888,480 (+103%) |
+| Hyperparams tuned | Yes (100 Optuna trials) | No — borrowed from TabM |
+
+### Per-seed Results (15 seeds)
+
+| Seed | TabLoRA Val | TabLoRA Test |
+|------|-------------|--------------|
+| 0 | −0.4970 | −0.4983 |
+| 1 | −0.4957 | −0.4963 |
+| 2 | −0.4986 | −0.4966 |
+| 3 | −0.4999 | −0.5010 |
+| 4 | −0.4997 | −0.4942 |
+| 5 | −0.4970 | −0.4954 |
+| 6 | −0.4939 | −0.4927 |
+| 7 | −0.4976 | −0.4880 |
+| 8 | −0.4984 | −0.4986 |
+| 9 | −0.4975 | −0.4995 |
+| 10 | −0.4956 | −0.5002 |
+| 11 | −0.4940 | −0.4959 |
+| 12 | −0.4951 | −0.4949 |
+| 13 | −0.4998 | −0.4972 |
+| 14 | −0.4974 | −0.4963 |
+
+### Summary
+
+| Model | Mean Val | Mean Test | Std (Test) | Ensemble-5 Test |
+|-------|----------|-----------|-----------|-----------------|
+| TabM (baseline) | −0.4458 | −0.4414 | ±0.0012 | −0.4402 |
+| TabLoRA rank 4 | −0.5003 | −0.4988 | ±0.0034 | −0.4915 |
+| TabLoRA rank 8 | −0.4971 | −0.4963 | ±0.0031 | −0.4894 |
+| **rank 8 vs rank 4** | **+0.0032** | **+0.0025** | **−0.0003** | **+0.0021** |
+| **rank 8 vs TabM** | **−0.0513** | **−0.0549** | **+0.0019** | **−0.0492** |
+
+### Analysis
+
+**Increasing rank continues to help.**
+Moving from rank 4 to rank 8 improves the mean test score from −0.4988 to −0.4963, a gain of 0.0025. The five-model ensemble score also improves from −0.4915 to −0.4894 (+0.0021), while test-score variability decreases slightly from ±0.0034 to ±0.0031. This provides additional evidence that the low-rank capacity of the adapters is a meaningful bottleneck at rank 4.
+
+**The improvement is modest relative to the parameter cost.**
+Rank 8 uses 888,480 parameters, approximately 41% more than rank 4 and 103% more than the TabM baseline. The 0.0025 test-score improvement over rank 4 therefore comes at a substantial increase in model size.
+
+**The gap to TabM remains.**
+Despite the improvement over rank 4, rank 8 remains 0.0549 below the tuned TabM baseline on mean test score and 0.0492 below it for the five-model ensemble. As with the other TabLoRA experiments, the optimizer hyperparameters were inherited from TabM rather than tuned for the LoRA architecture, so this does not yet represent a tuned comparison between the two methods.
+
+**Ensembling remains beneficial.**
+The rank-8 ensemble improves from a single-model mean of −0.4963 to −0.4894, a gain of 0.0069. This gain lies between rank 4 (+0.0073) and rank 16 (+0.0055), suggesting that independently trained TabLoRA models continue to learn complementary solutions as rank increases.
+
+---
+
+## Experiment #3 — 2026-09-06
+
+**Log:** `logs/results/tablora_california_20260906_153246.txt`
+
+**Config:** `california/0-evaluation/0-rank16.toml`
+
+**Dataset:** California Housing — regression (median house value)  
+**Metric:** negative RMSE (higher = better)
 
 ### Configuration
 
 | Parameter | TabM (baseline) | TabLoRA rank 4 | TabLoRA rank 16 |
-|-----------|-----------------|----------------|-----------------|
-| arch_type | `tabm` | `tabm-lora` | `tabm-lora` |
+|-----------|-----------------|---|---|
+| arch_type | tabm | tabm-lora | tabm-lora |
 | k | 32 | 32 | 32 |
 | rank | — | 4 | 16 |
 | n_blocks | 3 | 3 | 3 |
@@ -107,20 +164,20 @@ heads are still learning diverse solutions despite the overall gap.
 | n_parameters | 438,688 | 631,456 | 1,402,528 |
 | Hyperparams tuned | Yes (100 Optuna trials) | No — borrowed from TabM | No — borrowed from TabM |
 
-### Per-seed results (15 seeds)
+### Per-seed Results (15 seeds)
 
 | Seed | TabLoRA Val | TabLoRA Test |
 |------|-------------|--------------|
-| 0  | −0.4918 | −0.4933 |
-| 1  | −0.4871 | −0.4867 |
-| 2  | −0.4928 | −0.4926 |
-| 3  | −0.4881 | −0.4942 |
-| 4  | −0.4883 | −0.4968 |
-| 5  | −0.4901 | −0.4881 |
-| 6  | −0.4924 | −0.4921 |
-| 7  | −0.4931 | −0.4919 |
-| 8  | −0.4965 | −0.4936 |
-| 9  | −0.4923 | −0.4911 |
+| 0 | −0.4918 | −0.4933 |
+| 1 | −0.4871 | −0.4867 |
+| 2 | −0.4928 | −0.4926 |
+| 3 | −0.4881 | −0.4942 |
+| 4 | −0.4883 | −0.4968 |
+| 5 | −0.4901 | −0.4881 |
+| 6 | −0.4924 | −0.4921 |
+| 7 | −0.4931 | −0.4919 |
+| 8 | −0.4965 | −0.4936 |
+| 9 | −0.4923 | −0.4911 |
 | 10 | −0.4932 | −0.4903 |
 | 11 | −0.4921 | −0.4975 |
 | 12 | −0.4907 | −0.4945 |
@@ -130,42 +187,57 @@ heads are still learning diverse solutions despite the overall gap.
 ### Summary
 
 | Model | Mean Val | Mean Test | Std (Test) | Ensemble-5 Test |
-|-------|----------|-----------|------------|-----------------|
+|-------|----------|-----------|-----------|-----------------|
 | TabM (baseline) | −0.4458 | −0.4414 | ±0.0012 | −0.4402 |
 | TabLoRA rank 4 | −0.5003 | −0.4988 | ±0.0034 | −0.4915 |
 | TabLoRA rank 16 | −0.4914 | −0.4926 | ±0.0027 | −0.4871 |
-| rank 16 vs rank 4 | +0.0089 | +0.0062 | −0.0007 | +0.0044 |
-| rank 16 vs TabM | −0.0456 | −0.0512 | +0.0015 | −0.0469 |
+| **rank 16 vs rank 4** | **+0.0089** | **+0.0062** | **−0.0007** | **+0.0044** |
+| **rank 16 vs TabM** | **−0.0456** | **−0.0512** | **+0.0015** | **−0.0469** |
 
 ### Analysis
 
 **Higher rank helps.**
-Increasing the LoRA rank from 4 to 16 improves the mean test score by 0.0062 and the
-five-model ensemble score by 0.0044. Test-score variability also falls from ±0.0034 to
-±0.0027.
+Increasing the LoRA rank from 4 to 16 improves the mean test score by 0.0062 and the five-model ensemble score by 0.0044. Test-score variability also falls from ±0.0034 to ±0.0027.
 
 **The baseline gap remains.**
-Rank 16 does not close the gap to the tuned TabM baseline: its mean test score remains 0.0512
-lower, and its ensemble score remains 0.0469 lower. Both TabLoRA runs reuse hyperparameters
-tuned for TabM, so this comparison isolates the effect of rank but not TabLoRA's tuned potential.
+Rank 16 does not close the gap to the tuned TabM baseline: its mean test score remains 0.0512 lower, and its ensemble score remains 0.0469 lower. Both TabLoRA runs reuse hyperparameters tuned for TabM, so this comparison isolates the effect of rank but not TabLoRA's tuned potential.
 
 **Parameter cost.**
-Rank 16 uses 1,402,528 parameters: 122% more than rank 4 and 220% more than TabM. The accuracy
-gain therefore comes with a substantial parameter-efficiency tradeoff.
+Rank 16 uses 1,402,528 parameters: 122% more than rank 4 and 220% more than TabM. The accuracy gain therefore comes with a substantial parameter-efficiency tradeoff.
 
 **Ensemble gain.**
-The rank-16 five-model ensemble improves over its single-model mean by 0.0054. This confirms
-that independently seeded rank-16 models remain complementary, although the gain is smaller
-than the 0.0073 improvement observed at rank 4.
+The rank-16 five-model ensemble improves over its single-model mean by approximately 0.0055. This confirms that independently seeded rank-16 models remain complementary, although the gain is smaller than the improvement observed at rank 4.
+
+---
+
+## Cross-Rank Analysis
+
+The three experiments form a rank ablation at ranks 4, 8, and 16 while holding the remaining architecture and optimizer settings fixed.
+
+### Rank Progression
+
+| Rank | Parameters | Mean Val | Mean Test | Test Std | Ensemble-5 |
+|------|------------|----------|-----------|----------|-----------|
+| 4 | 631,456 | −0.5003 | −0.4988 | ±0.0034 | −0.4915 |
+| 8 | 888,480 | −0.4971 | −0.4963 | ±0.0031 | −0.4894 |
+| 16 | 1,402,528 | −0.4914 | −0.4926 | ±0.0027 | −0.4871 |
+
+Performance improves monotonically with rank: mean test score increases from −0.4988 at rank 4, to −0.4963 at rank 8, to −0.4926 at rank 16. Ensemble performance follows the same ordering. Test variance also decreases monotonically from ±0.0034 to ±0.0031 to ±0.0027.
+
+The gains, however, are expensive in parameter count. Doubling rank from 4 to 8 adds 257,024 parameters for a +0.0025 test improvement, while doubling it again from 8 to 16 adds 514,048 parameters for a +0.0037 improvement. Even rank 16, at more than three times the parameter count of TabM, remains substantially behind the tuned baseline.
+
+Taken together, these results suggest that adapter rank is a genuine capacity constraint, but rank alone is unlikely to explain the TabM–TabLoRA performance gap. The next higher-value experiment is therefore hyperparameter tuning—particularly learning rate and weight decay—rather than continuing to increase rank.
 
 ---
 
 ## Master Summary Table
 
-> All scores are negative RMSE — higher is better.
-> Δ = TabLoRA − TabM (negative means TabLoRA is worse).
+All scores are negative RMSE — **higher is better**.
+
+*Δ = TabLoRA − TabM (negative means TabLoRA is worse)*
 
 | # | Date | Dataset | Rank | Params | TabM Test | TabLoRA Test | Δ | TabM Ens-5 | TabLoRA Ens-5 | Δ Ens |
-|---|------|---------|------|--------|-----------|--------------|---|------------|---------------|-------|
+|---|------|---------|------|--------|-----------|--------------|-------|-----------|---------------|-------|
 | 1 | 2026-09-04 | california | 4 | 631,456 | −0.4414 | −0.4988 | −0.0574 | −0.4402 | −0.4915 | −0.0513 |
-| 2 | 2026-09-06 | california | 16 | 1,402,528 | −0.4414 | −0.4926 | −0.0512 | −0.4402 | −0.4871 | −0.0469 |
+| 2 | 2026-09-05 | california | 8 | 888,480 | −0.4414 | −0.4963 | −0.0549 | −0.4402 | −0.4894 | −0.0492 |
+| 3 | 2026-09-06 | california | 16 | 1,402,528 | −0.4414 | −0.4926 | −0.0512 | −0.4402 | −0.4871 | −0.0469 |

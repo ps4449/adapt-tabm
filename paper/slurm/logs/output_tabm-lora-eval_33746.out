@@ -1,0 +1,24 @@
+Evaluation dir: exp/tabm-lora/california/0-evaluation
+Node:           TC2N01
+GPU:            0
+====================================================================================================
+[>>>] exp/tabm-lora/california/0-evaluation/0 | 2026-09-05 18:00:04.612661
+====================================================================================================
+
+{'seed': 0,
+ 'batch_size': 256,
+ 'patience': 16,
+ 'n_epochs': -1,
+ 'gradient_clipping_norm': 1.0,
+ 'amp': True,
+ 'data': {'cache': True, 'path': 'data/california', 'num_policy': 'noisy-quantile'},
+ 'optimizer': {'type': 'AdamW', 'lr': 0.000872489003621806, 'weight_decay': 0.03777165108799435},
+ 'model': {'arch_type': 'tabm-lora',
+           'k': 32,
+           'rank': 8,
+           'share_training_batches': False,
+           'backbone': {'type': 'MLP',
+                        'n_blocks': 3,
+                        'd_block': 400,
+                        'dropout': 0.20769705860329654}}}
+
