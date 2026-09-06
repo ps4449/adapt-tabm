@@ -18,8 +18,11 @@ weight_decay = 0.03777165108799435
 [model]
 arch_type = "tabm-lora"
 k = 32
-rank = 8
+rank = 4
+adapter_scale = 1.0
+lora_input_scaling = true
 share_training_batches = false
+
 
 [model.backbone]
 type = "MLP"

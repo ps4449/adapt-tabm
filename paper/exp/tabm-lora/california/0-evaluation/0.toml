@@ -20,7 +20,7 @@ arch_type = "tabm-lora"
 k = 32
 rank = 4
 adapter_scale = 1.0
-lora_input_scaling = false
+lora_input_scaling = true
 share_training_batches = false
 
 [model.backbone]

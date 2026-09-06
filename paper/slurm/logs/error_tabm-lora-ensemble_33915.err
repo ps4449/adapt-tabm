@@ -1,0 +1,5 @@
+/cm/local/apps/slurm/var/spool/job33915/slurm_script: line 35: cd: /home/msai/tejasvit001/adapt-tabm/paper: No such file or directory
+Computing ensembles for exp/tabm-lora/california/0-evaluation
+Removing the existing output: exp/tabm-lora/california/0-ensemble-5/0
+Removing the existing output: exp/tabm-lora/california/0-ensemble-5/1
+Removing the existing output: exp/tabm-lora/california/0-ensemble-5/2
