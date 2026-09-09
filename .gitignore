@@ -181,3 +181,5 @@ events.out.tfevents.*
 # Other
 local/
 .env
+paper/slurm/logs/**.err
+paper/slurm/logs/**.out
