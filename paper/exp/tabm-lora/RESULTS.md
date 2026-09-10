@@ -160,12 +160,106 @@ than the 0.0073 improvement observed at rank 4.
 
 ---
 
+## Experiment #3 — 2026-09-06
+
+> Log: `logs/results/tablora_california_20260906_163700.txt`
+
+**Config:** rank=2, adapter_scale=1.0 (default), lr=8.72e-4, wd=3.78e-2 (TabM defaults), no input scaling.
+
+| Model | Mean Test | Std | Ensemble-5 Test |
+|-------|-----------|-----|-----------------|
+| TabM | −0.4414 | ±0.0012 | −0.4402 |
+| TabLoRA rank=2 | −0.5016 | ±0.0040 | −0.4930 |
+
+Worse than rank=4 and rank=16. Rank=2 is too small — the adapter cannot represent enough of the
+residual subspace. High variance (±0.0040) confirms instability.
+
+---
+
+## Experiment #4 — 2026-09-10
+
+> Log: `logs/results/tablora_california_20260910_162345.txt`
+
+**Config:** rank=2, adapter_scale=1.0 (default), lr=1.50e-3, wd=5.00e-3 (manually adjusted).
+
+| Model | Mean Test | Std | Ensemble-5 Test |
+|-------|-----------|-----|-----------------|
+| TabM | −0.4414 | ±0.0012 | −0.4402 |
+| TabLoRA rank=2 | −0.5026 | ±0.0025 | −0.4935 |
+
+Higher lr reduced variance slightly vs experiment #3 (±0.0040 → ±0.0025) but did not improve
+mean test. Rank=2 remains too limited regardless of lr.
+
+---
+
+## Experiment #5 — 2026-09-10
+
+> Log: `logs/results/tablora_california_20260910_180352.txt`
+
+**Config:** rank=2, adapter_scale=1.0, lr=4.98e-3, wd=2.01e-4 (Optuna-found values for rank=2).
+
+| Model | Mean Test | Std | Ensemble-5 Test |
+|-------|-----------|-----|-----------------|
+| TabM | −0.4414 | ±0.0012 | −0.4402 |
+| TabLoRA rank=2 | −0.4997 | ±0.0036 | −0.4865 |
+
+Best rank=2 result — ensemble −0.4865 improved significantly. The high lr (5e-3) with very low
+wd compensates for rank=2's limited capacity by training more aggressively. Still well below
+TabM. Confirmed rank=2 is not a viable direction.
+
+---
+
+## Experiment #6 — 2026-09-10
+
+> Log: `logs/results/tablora_california_20260910_184206.txt`
+
+**Config:** rank=4, adapter_scale=0.25, lora_input_scaling=true, lr=1.77e-3, wd=8.52e-3
+(Optuna-tuned, 50 trials).
+
+| Model | Mean Test | Std | Ensemble-5 Test |
+|-------|-----------|-----|-----------------|
+| TabM | −0.4414 | ±0.0012 | −0.4402 |
+| TabLoRA rank=4 | −0.4523 | ±0.0017 | −0.4510 |
+| Δ | | | −0.0108 |
+
+**Best result with adapter_scale approach.** Gap narrowed to −0.011 from −0.057 at the start.
+Three changes drove this: (1) adapter_scale=0.25 reduces adapter over-contribution, (2)
+lora_input_scaling adds per-head input diversity, (3) lr/wd tuned specifically for LoRA dynamics.
+
+---
+
+## Experiment #7 — 2026-09-10
+
+> Log: `logs/results/tablora_california_20260910_200309.txt`
+
+**Config:** rank=8, adapter_scale=0.25, lora_input_scaling=true, lr=5.57e-4, wd=3.17e-2
+(Optuna-tuned, 50 trials).
+
+| Model | Mean Test | Std | Ensemble-5 Test |
+|-------|-----------|-----|-----------------|
+| TabM | −0.4414 | ±0.0012 | −0.4402 |
+| TabLoRA rank=8 | −0.4566 | ±0.0016 | −0.4557 |
+| vs rank=4 (#6) | −0.0043 | — | −0.0047 |
+
+Rank=8 with fixed adapter_scale=0.25 is **worse** than rank=4. With fixed scale, doubling rank
+doubles the adapter's aggregate contribution magnitude — the tuned lr (5.57e-4, much lower than
+rank=4's 1.77e-3) compensates partially but cannot fully recover. This motivates `lora_alpha`
+canonical scaling where effective scale = alpha/rank adjusts automatically with rank.
+
+---
+
 ## Master Summary Table
 
 > All scores are negative RMSE — higher is better.
 > Δ = TabLoRA − TabM (negative means TabLoRA is worse).
 
-| # | Date | Dataset | Rank | Params | TabM Test | TabLoRA Test | Δ | TabM Ens-5 | TabLoRA Ens-5 | Δ Ens |
-|---|------|---------|------|--------|-----------|--------------|---|------------|---------------|-------|
-| 1 | 2026-09-04 | california | 4 | 631,456 | −0.4414 | −0.4988 | −0.0574 | −0.4402 | −0.4915 | −0.0513 |
-| 2 | 2026-09-06 | california | 16 | 1,402,528 | −0.4414 | −0.4926 | −0.0512 | −0.4402 | −0.4871 | −0.0469 |
+| # | Log timestamp | Rank | Scale | input_scaling | lr | Mean Test | Δ | Ens-5 | Δ Ens |
+|---|---------------|------|-------|---------------|----|-----------|---|-------|-------|
+| TabM | — | — | — | — | 8.72e-4 | −0.4414 | — | −0.4402 | — |
+| 1 | 20260904_214457 | 4 | 1.0 (fixed) | No | 8.72e-4 | −0.4988 | −0.0574 | −0.4915 | −0.0513 |
+| 2 | 20260906_153246 | 16 | 1.0 (fixed) | No | 8.72e-4 | −0.4926 | −0.0512 | −0.4871 | −0.0469 |
+| 3 | 20260906_163700 | 2 | 1.0 (fixed) | No | 8.72e-4 | −0.5016 | −0.0602 | −0.4930 | −0.0528 |
+| 4 | 20260910_162345 | 2 | 1.0 (fixed) | No | 1.50e-3 | −0.5026 | −0.0612 | −0.4935 | −0.0533 |
+| 5 | 20260910_180352 | 2 | 1.0 (fixed) | No | 4.98e-3 | −0.4997 | −0.0583 | −0.4865 | −0.0463 |
+| **6** | **20260910_184206** | **4** | **0.25 (fixed)** | **Yes** | **1.77e-3** | **−0.4523** | **−0.0109** | **−0.4510** | **−0.0108** |
+| 7 | 20260910_200309 | 8 | 0.25 (fixed) | Yes | 5.57e-4 | −0.4566 | −0.0152 | −0.4557 | −0.0155 |

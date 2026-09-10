@@ -1,7 +1,7 @@
 seed = 0
 function = "bin.model.main"
-n_trials = 50
-sampler = { n_startup_trials = 15 }
+n_trials = 100
+sampler = { n_startup_trials = 25 }
 
 [space]
 seed = 0
@@ -25,11 +25,12 @@ weight_decay = ["_tune_", "loguniform", 1e-5, 1e-1]
 arch_type = "tabm-lora"
 k = 32
 rank = 8
-lora_alpha = 0.5
+lora_alpha = ["_tune_", "loguniform", 0.1, 2.0]
+lora_input_scaling = true
 share_training_batches = false
 
 [space.model.backbone]
 type = "MLP"
 n_blocks = 3
 d_block = 400
-dropout = 0.20769705860329654
+dropout = ["_tune_", "uniform", 0.0, 0.5]
