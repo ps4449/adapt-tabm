@@ -121,6 +121,7 @@ class Model(nn.Module):
         k: None | int = None,
         rank: None | int = None,
         lora_alpha: None | float = None,
+        lora_input_scaling: bool = False,
         share_training_batches: bool = DEFAULT_SHARE_TRAINING_BATCHES,
     ) -> None:
         # >>> Validate arguments.
@@ -240,8 +241,15 @@ class Model(nn.Module):
                     lib.deep.LinearLoRAEnsemble,
                     k=k,
                     rank=rank,
-                        lora_alpha=lora_alpha,
+                    
+                    lora_alpha=lora_alpha,
                 )
+                if lora_input_scaling:
+                    self.minimal_ensemble_adapter = lib.deep.ScaleEnsemble(
+                        k,
+                        d_flat,
+                        init='random-signs',
+                    )
 
             else:
                 raise ValueError(f'Unknown arch_type: {arch_type}')

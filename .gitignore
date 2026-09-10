@@ -178,8 +178,14 @@ events.out.tfevents.*
 **/exp/debug/*/*.*
 **/exp/debug/*/DONE
 
+**/exp/**/1/
+**/exp/**/2/
+**/exp/**/3/
+
 # Other
 local/
 .env
 paper/slurm/logs/**.err
 paper/slurm/logs/**.out
+
+
