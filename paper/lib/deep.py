@@ -296,9 +296,12 @@ class LinearLoRAEnsemble(nn.Module):
         *,
         k: int,
         rank: int,
+        lora_alpha: float | None = None,
     ):
         assert k > 0
         assert rank > 0
+        assert lora_alpha is None or lora_alpha > 0
+
         super().__init__()
 
         self.weight = nn.Parameter(torch.empty(out_features, in_features))
@@ -313,12 +316,17 @@ class LinearLoRAEnsemble(nn.Module):
         self.out_features = out_features
         self.k = k
         self.rank = rank
-
+        
+        self.lora_alpha = float(rank if lora_alpha is None else lora_alpha)
+        self.scaling = self.lora_alpha / rank
+        
         self.reset_parameters()
 
     def reset_parameters(self):
         init_rsqrt_uniform_(self.weight, self.in_features)
-        nn.init.normal_(self.lora_A)
+
+        # Default normalised intialisation for A with SD 1
+        init_rsqrt_uniform_(self.lora_A, self.in_features)
         nn.init.zeros_(self.lora_B)
         if self.bias is not None:
             bias_init = torch.empty(
@@ -340,7 +348,9 @@ class LinearLoRAEnsemble(nn.Module):
         x_t = x.transpose(0, 1)                          # (K, B, in_features)
         lora = x_t @ self.lora_A.transpose(-1, -2)       # (K, B, rank)
         lora = lora @ self.lora_B.transpose(-1, -2)      # (K, B, out_features)
-        out = out + lora.transpose(0, 1)                  # (B, K, out_features)
+        # out = out + lora.transpose(0, 1)                  # (B, K, out_features)
+        
+        out = out + self.scaling * lora.transpose(0, 1)
 
         if self.bias is not None:
             out = out + self.bias

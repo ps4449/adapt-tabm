@@ -120,6 +120,7 @@ class Model(nn.Module):
         ],
         k: None | int = None,
         rank: None | int = None,
+        lora_alpha: None | float = None,
         share_training_batches: bool = DEFAULT_SHARE_TRAINING_BATCHES,
     ) -> None:
         # >>> Validate arguments.
@@ -239,6 +240,7 @@ class Model(nn.Module):
                     lib.deep.LinearLoRAEnsemble,
                     k=k,
                     rank=rank,
+                        lora_alpha=lora_alpha,
                 )
 
             else:
@@ -257,6 +259,7 @@ class Model(nn.Module):
         self.arch_type = arch_type
         self.k = k
         self.rank = rank
+        self.lora_alpha = lora_alpha
         self.share_training_batches = share_training_batches
 
     def forward(
@@ -775,7 +778,8 @@ def main(
 
                 candidate_idx = [*greedy_idx, head_idx]
                 candidate_score = dataset.task.calculate_metrics(
-                    {'val': head_predictions['val'][:, candidate_idx].mean(1)},
+                    {
+                        'val': head_predictions['val'][:, candidate_idx].mean(1)},
                     prediction_type,
                 )['val']['score']
                 if candidate_score > greedy_score and (
@@ -790,8 +794,10 @@ def main(
                 break
             else:
                 assert new_score is not None
+                selected_head = new_idx[-1]
                 greedy_score = new_score
                 greedy_idx = new_idx
+                greedy_mask[selected_head] = True
 
         greedy_heads_output.mkdir(parents=True)
         lib.finish(
