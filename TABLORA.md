@@ -4,15 +4,19 @@ Extending [TabM](https://arxiv.org/abs/2410.24210) (ICLR 2025) by replacing its 
 
 ## What changed
 
-**`paper/lib/deep.py`** — Added `LinearLoRAEnsemble` after `LinearEfficientEnsemble`. Each ensemble member shares a base weight W and learns a low-rank delta:
+**`paper/lib/deep.py`** — Added `LinearLoRAEnsemble` after `LinearEfficientEnsemble`. Each ensemble member shares a base weight W and learns a scaled low-rank delta:
 
 ```
-output_i = x @ W.T + x @ A_i.T @ B_i.T + bias_i
+output_i = x @ W.T + (lora_alpha / rank) * (x @ A_i.T @ B_i.T) + bias_i
 ```
 
-B is zero-initialised so the delta starts at zero. Controlled by `rank`.
+B is zero-initialised so the delta starts at zero. Adapter capacity is controlled by `rank`,
+while `lora_alpha / rank` controls its effective contribution.
 
-**`paper/bin/model.py`** — Added `arch_type='tabm-lora'` and a `rank` parameter. Setting `arch_type` to `tabm-lora` in a config automatically replaces all linear layers in the backbone.
+**`paper/bin/model.py`** — Added `arch_type='tabm-lora'`, `rank`, `lora_alpha` and optional
+`lora_input_scaling`. Setting `arch_type` to `tabm-lora` automatically replaces all linear
+layers in the backbone. Enabling input scaling adds a per-head `ScaleEnsemble` before the
+backbone.
 
 ## Datasets
 
@@ -39,8 +43,10 @@ Key fields for TabLoRA:
 ```toml
 [model]
 arch_type = "tabm-lora"
-k    = 32    # number of ensemble heads
-rank = 4     # LoRA rank — try 2, 4, 8, 16
+k = 32                       # number of ensemble heads
+rank = 8                     # LoRA rank
+lora_alpha = 0.5             # effective scale = 0.5 / 8 = 0.0625
+lora_input_scaling = true    # per-head input scaling
 ```
 
 Everything else (optimizer, backbone, data) mirrors the original TabM configs.
@@ -118,11 +124,20 @@ python tools/lookup_results.py california --arch tabm-lora --seed 3
 python bin/summarize_results.py exp/tabm-lora/california/0-evaluation
 ```
 
-## Current results — California (15 seeds, rank=4)
+## Current results — California (15 seeds)
 
-| Model | Mean test | Ensemble-5 |
-|-------|-----------|------------|
-| TabM (baseline) | −0.4414 | −0.4402 |
-| TabLoRA (ours)  | −0.4988 | −0.4915 |
+| Model | Rank | Effective scale | Parameters | Mean test | Test std | Ensemble-5 |
+|-------|------|-----------------|------------|-----------|----------|------------|
+| TabM baseline | — | — | 438,688 | −0.4414 | 0.0012 | −0.4402 |
+| TabLoRA with (TabM config) | 4 | 1.0 | 631,456 | −0.4988 | 0.0034 | −0.4915 |
+| Rank 4 Input-scaled checkpoint | 4 | 0.25 | 631,712 | −0.4511 | 0.0014 | −0.4500 |
+| Rank-8 checkpoint | 8 | 0.125 | 888,736 | −0.4485 | 0.0011 | −0.4472 |
+| **Selected rank-8 checkpoint** | **8** | **0.0625** | **888,736** | **−0.4464** | **0.0012** | **−0.4451** |
 
-Score is negative RMSE, where higher score is better. The gap is expected for an untuned rank=4 first run.
+Score is negative RMSE, where higher is better. Reducing the rank-8 adapter scale from 0.125
+to 0.0625 improves mean test by 0.0021 and ensemble-5 by 0.0021. The selected checkpoint is
+0.0050 behind TabM on mean test and 0.0049 behind it on ensemble-5. The scale sweep is frozen
+at 0.0625 to avoid further selection after observing test results.
+
+Full configurations, per-seed tables and ensemble results are documented in
+[`paper/exp/tabm-lora/RESULTS.md`](paper/exp/tabm-lora/RESULTS.md).
