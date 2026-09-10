@@ -113,8 +113,16 @@ class Model(nn.Module):
             # TabM-mini. The adapter is initialized from the normal distribution.
             # This variant was not used in the paper.
             'tabm-mini-normal',
+            #
+            # TabM-LoRA: replace BatchEnsemble adapters with per-ensemble LoRA
+            # low-rank adapters (A_i, B_i) on top of a shared weight W.
+            'tabm-lora',
         ],
         k: None | int = None,
+        rank: None | int = None,
+        lora_alpha: None | float = None,
+        adapter_scale: None | float = None,
+        lora_input_scaling: bool = False,
         share_training_batches: bool = DEFAULT_SHARE_TRAINING_BATCHES,
     ) -> None:
         # >>> Validate arguments.
@@ -128,6 +136,8 @@ class Model(nn.Module):
         else:
             assert k is not None
             assert k > 0
+        if arch_type == 'tabm-lora':
+            assert rank is not None and rank > 0
 
         super().__init__()
 
@@ -174,7 +184,7 @@ class Model(nn.Module):
             assert k is not None
             first_adapter_init = (
                 None
-                if arch_type == 'tabm-packed'
+                if arch_type in ('tabm-packed', 'tabm-lora')
                 else 'normal'
                 if arch_type in ('tabm-mini-normal', 'tabm-normal')
                 # For other arch_types, the initialization depends
@@ -224,6 +234,24 @@ class Model(nn.Module):
                 assert first_adapter_init is None
                 lib.deep.make_efficient_ensemble(self.backbone, lib.deep.NLinear, n=k)
 
+            elif arch_type == 'tabm-lora':
+                assert first_adapter_init is None
+                assert rank is not None
+                lib.deep.make_efficient_ensemble(
+                    self.backbone,
+                    lib.deep.LinearLoRAEnsemble,
+                    k=k,
+                    rank=rank,
+                    lora_alpha=lora_alpha,
+                    adapter_scale=adapter_scale,
+                )
+                if lora_input_scaling:
+                    self.minimal_ensemble_adapter = lib.deep.ScaleEnsemble(
+                        k,
+                        d_flat,
+                        init='random-signs',
+                    )
+
             else:
                 raise ValueError(f'Unknown arch_type: {arch_type}')
 
@@ -239,6 +267,7 @@ class Model(nn.Module):
         # >>>
         self.arch_type = arch_type
         self.k = k
+        self.rank = rank
         self.share_training_batches = share_training_batches
 
     def forward(
@@ -772,8 +801,10 @@ def main(
                 break
             else:
                 assert new_score is not None
+                selected_head = new_idx[-1]
                 greedy_score = new_score
                 greedy_idx = new_idx
+                greedy_mask[selected_head] = True
 
         greedy_heads_output.mkdir(parents=True)
         lib.finish(
