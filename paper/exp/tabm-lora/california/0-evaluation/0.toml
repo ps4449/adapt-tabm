@@ -12,13 +12,15 @@ num_policy = "noisy-quantile"
 
 [optimizer]
 type = "AdamW"
-lr = 0.000872489003621806
-weight_decay = 0.03777165108799435
+lr = 0.0011156557507850113
+weight_decay = 0.09389867213262516
 
 [model]
 arch_type = "tabm-lora"
 k = 32
-rank = 4
+rank = 8
+lora_alpha = 0.5
+lora_input_scaling = true
 share_training_batches = false
 
 [model.backbone]
