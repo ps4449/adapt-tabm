@@ -30,6 +30,18 @@ This extracts all datasets into `paper/data/`.
 
 Available: `california`, `adult`, `churn`, `higgs-small`, `covtype2`, `otto`, `diamond`, `house`, `microsoft`, `black-friday`.
 
+### Datasets used in evaluation
+
+| Dataset | Task | Target | Rows | Features | Categoricals | Notes |
+|---------|------|--------|------|----------|--------------|-------|
+| `california` | Regression | Median house value | 20,640 | 8 num | No | Baseline dataset for tuning |
+| `adult` | Binary classification | Income >50K | 48,842 | 6 num + 8 cat | Yes (`cat_policy = "ordinal"`) | Census income prediction |
+| `higgs-small` | Binary classification | Signal vs background | 98,050 | 28 num | No | Particle physics |
+| `otto` | Multiclass (9 classes) | Product category | 61,878 | 93 num | No | Replaces covtype2 (too slow) |
+| `diamond` | Regression | Price | 53,940 | 6 num + 3 cat | Yes (`cat_policy = "ordinal"`) | Gem price prediction |
+
+`covtype2` (multiclass, ~500k rows) was excluded from evaluation — it takes ~1 hour per seed, exceeding the 5-hour cluster wall time for 15 seeds.
+
 ## Config
 
 Configs are TOML files under `paper/exp/tabm-lora/<dataset>/0-evaluation/`.
