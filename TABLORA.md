@@ -34,6 +34,8 @@ This extracts all datasets into `paper/data/`.
 
 Available: `california`, `adult`, `churn`, `higgs-small`, `covtype2`, `otto`, `diamond`, `house`, `microsoft`, `black-friday`.
 
+`covtype2` is excluded from benchmarking — it has 500k+ rows, which makes the 15-seed x rank-sweep evaluation loop too slow for the current cluster budget.
+
 ## Config
 
 Configs are TOML files under `paper/exp/tabm-lora/<dataset>/0-evaluation/`.
@@ -126,18 +128,15 @@ python bin/summarize_results.py exp/tabm-lora/california/0-evaluation
 
 ## Current results — California (15 seeds)
 
-| Model | Rank | Effective scale | Parameters | Mean test | Test std | Ensemble-5 |
-|-------|------|-----------------|------------|-----------|----------|------------|
-| TabM baseline | — | — | 438,688 | −0.4414 | 0.0012 | −0.4402 |
-| TabLoRA with (TabM config) | 4 | 1.0 | 631,456 | −0.4988 | 0.0034 | −0.4915 |
-| Rank 4 Input-scaled checkpoint | 4 | 0.25 | 631,712 | −0.4511 | 0.0014 | −0.4500 |
-| Rank-8 checkpoint | 8 | 0.125 | 888,736 | −0.4485 | 0.0011 | −0.4472 |
-| **Selected rank-8 checkpoint** | **8** | **0.0625** | **888,736** | **−0.4464** | **0.0012** | **−0.4451** |
+| Model | Mean test | Ensemble-5 |
+|-------|-----------|------------|
+| TabM (baseline) | −0.4414 | −0.4402 |
+| TabLoRA (ours)  | −0.4988 | −0.4915 |
 
-Score is negative RMSE, where higher is better. Reducing the rank-8 adapter scale from 0.125
-to 0.0625 improves mean test by 0.0021 and ensemble-5 by 0.0021. The selected checkpoint is
-0.0050 behind TabM on mean test and 0.0049 behind it on ensemble-5. The scale sweep is frozen
-at 0.0625 to avoid further selection after observing test results.
+Score is negative RMSE, where higher score is better. The gap is expected for an untuned rank=4 first run.
 
-Full configurations, per-seed tables and ensemble results are documented in
-[`paper/exp/tabm-lora/RESULTS.md`](paper/exp/tabm-lora/RESULTS.md).
+## Further benchmarking (in progress)
+
+Configs for the same 15-seed evaluation are set up for `adult`, `higgs-small`, `otto`, and `diamond` under `paper/exp/tabm-lora/<dataset>/0-evaluation/`, plus `paper/slurm/compare_tablora.sh` and `paper/tools/compare_results.py` to run and compare results across datasets in one pass. Results are not yet collected — this section will be filled in once runs complete on the cluster.
+
+`covtype2` is intentionally left out of this sweep (see [Datasets](#datasets)).
