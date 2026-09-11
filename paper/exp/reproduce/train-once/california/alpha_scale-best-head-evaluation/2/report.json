@@ -1,0 +1,76 @@
+{
+    "function": "bin.model.main",
+    "gpus": [
+        "NVIDIA A40"
+    ],
+    "config": {
+        "seed": 2,
+        "batch_size": 256,
+        "patience": 16,
+        "n_epochs": -1,
+        "gradient_clipping_norm": 1.0,
+        "amp": true,
+        "data": {
+            "cache": true,
+            "path": "data/california",
+            "num_policy": "noisy-quantile"
+        },
+        "optimizer": {
+            "type": "AdamW",
+            "lr": 0.000872489003621806,
+            "weight_decay": 0.03777165108799435
+        },
+        "model": {
+            "arch_type": "tabm-lora",
+            "k": 32,
+            "rank": 4,
+            "lora_alpha": 0.25,
+            "lora_input_scaling": true,
+            "share_training_batches": false,
+            "backbone": {
+                "type": "MLP",
+                "n_blocks": 3,
+                "d_block": 400,
+                "dropout": 0.20769705860329654
+            },
+            "num_embeddings": {
+                "type": "PiecewiseLinearEmbeddings",
+                "d_embedding": 24
+            }
+        },
+        "bins": {
+            "n_bins": 48
+        }
+    },
+    "n_parameters": 744352,
+    "prediction_type": "labels",
+    "epoch_size": 52,
+    "best_step": 5044,
+    "metrics": {
+        "train": {
+            "rmse": 0.311091299693997,
+            "mae": 0.22124433517456055,
+            "r2": 0.9281514772342202,
+            "score": -0.311091299693997
+        },
+        "val": {
+            "rmse": 0.45316582528721683,
+            "mae": 0.29500114917755127,
+            "r2": 0.8425001770987699,
+            "score": -0.45316582528721683
+        },
+        "test": {
+            "rmse": 0.4547318381226391,
+            "mae": 0.29956239461898804,
+            "r2": 0.8414201025697082,
+            "score": -0.4547318381226391
+        }
+    },
+    "time": "0:00:30.945895",
+    "chunk_size": null,
+    "eval_batch_size": 32768,
+    "heads": [
+        10
+    ],
+    "head_selection_time": "0:00:00.034696"
+}
