@@ -248,6 +248,45 @@ canonical scaling where effective scale = alpha/rank adjusts automatically with 
 
 ---
 
+## Experiment #8 — 2026-09-11 (swara-experiments replication)
+
+> Log: `logs/results/tablora_california_20260911_025319.txt`
+
+**Config:** rank=8, lora_alpha=0.5 (effective scale=0.0625), lora_input_scaling=true,
+lr=8.72e-4, wd=3.78e-2 (TabM defaults). Replicates swara-experiments branch result.
+
+| Model | Mean Test | Std | Ensemble-5 Test |
+|-------|-----------|-----|-----------------|
+| TabM | −0.4414 | ±0.0012 | −0.4402 |
+| TabLoRA | −0.4463 | ±0.0016 | −0.4448 |
+| Δ | −0.0049 | — | −0.0046 |
+
+Confirmed replication of swara-experiments' best result (−0.4451). The missing piece from
+earlier failed attempts was `lora_input_scaling=true` — without it, lora_alpha=0.5 gave
+−0.5002. The ScaleEnsemble at the input is essential for head diversity at this low adapter scale.
+
+---
+
+## Experiment #9 — 2026-09-11 (tuned lr/wd)
+
+> Log: `logs/results/tablora_california_20260911_042935.txt`
+
+**Config:** rank=8, lora_alpha=0.5, lora_input_scaling=true, lr=1.12e-3, wd=9.39e-2
+(Optuna-tuned, 50 trials over lr, wd).
+
+| Model | Mean Test | Std | Ensemble-5 Test |
+|-------|-----------|-----|-----------------|
+| TabM | −0.4414 | ±0.0012 | −0.4402 |
+| TabLoRA | −0.4448 | ±0.0009 | **−0.4434** |
+| Δ | −0.0034 | — | −0.0032 |
+
+**Best result to date.** Gap to TabM narrowed to −0.003 on ensemble. Notably, std (±0.0009)
+is now *lower* than TabM's (±0.0012) — TabLoRA is more stable across seeds. Tuning lr/wd
+specifically for the lora_alpha regime (higher lr 1.12e-3 vs TabM's 8.72e-4, higher wd 9.39e-2
+vs TabM's 3.78e-2) gained another 0.0014 on ensemble over the default values.
+
+---
+
 ## Master Summary Table
 
 > All scores are negative RMSE — higher is better.
@@ -263,3 +302,5 @@ canonical scaling where effective scale = alpha/rank adjusts automatically with 
 | 5 | 20260910_180352 | 2 | 1.0 (fixed) | No | 4.98e-3 | −0.4997 | −0.0583 | −0.4865 | −0.0463 |
 | **6** | **20260910_184206** | **4** | **0.25 (fixed)** | **Yes** | **1.77e-3** | **−0.4523** | **−0.0109** | **−0.4510** | **−0.0108** |
 | 7 | 20260910_200309 | 8 | 0.25 (fixed) | Yes | 5.57e-4 | −0.4566 | −0.0152 | −0.4557 | −0.0155 |
+| 8 | 20260911_025319 | 8 | alpha=0.5 (0.0625) | Yes | 8.72e-4 | −0.4463 | −0.0049 | −0.4448 | −0.0046 |
+| **9** | **20260911_042935** | **8** | **alpha=0.5 (0.0625)** | **Yes** | **1.12e-3** | **−0.4448** | **−0.0034** | **−0.4434** | **−0.0032** |
