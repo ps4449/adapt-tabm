@@ -117,6 +117,10 @@ class Model(nn.Module):
             # TabM-LoRA: replace BatchEnsemble adapters with per-ensemble LoRA
             # low-rank adapters (A_i, B_i) on top of a shared weight W.
             'tabm-lora',
+            # TabM-NoRA-init: normalize each A_i column once at initialization.
+            'tabm-nora-init',
+            # TabM-NoRA: normalize each A_i column during every forward pass.
+            'tabm-nora',
         ],
         k: None | int = None,
         rank: None | int = None,
@@ -136,7 +140,7 @@ class Model(nn.Module):
         else:
             assert k is not None
             assert k > 0
-        if arch_type == 'tabm-lora':
+        if arch_type in ('tabm-lora', 'tabm-nora-init', 'tabm-nora'):
             assert rank is not None and rank > 0
 
         super().__init__()
@@ -184,7 +188,8 @@ class Model(nn.Module):
             assert k is not None
             first_adapter_init = (
                 None
-                if arch_type in ('tabm-packed', 'tabm-lora')
+                if arch_type
+                in ('tabm-packed', 'tabm-lora', 'tabm-nora-init', 'tabm-nora')
                 else 'normal'
                 if arch_type in ('tabm-mini-normal', 'tabm-normal')
                 # For other arch_types, the initialization depends
@@ -234,12 +239,16 @@ class Model(nn.Module):
                 assert first_adapter_init is None
                 lib.deep.make_efficient_ensemble(self.backbone, lib.deep.NLinear, n=k)
 
-            elif arch_type == 'tabm-lora':
+            elif arch_type in ('tabm-lora', 'tabm-nora-init', 'tabm-nora'):
                 assert first_adapter_init is None
                 assert rank is not None
                 lib.deep.make_efficient_ensemble(
                     self.backbone,
-                    lib.deep.LinearLoRAEnsemble,
+                    {
+                        'tabm-lora': lib.deep.LinearLoRAEnsemble,
+                        'tabm-nora-init': lib.deep.LinearNoRAInitEnsemble,
+                        'tabm-nora': lib.deep.LinearNoRAEnsemble,
+                    }[arch_type],
                     k=k,
                     rank=rank,
                     lora_alpha=lora_alpha,

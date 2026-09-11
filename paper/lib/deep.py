@@ -276,7 +276,8 @@ class LinearEfficientEnsemble(nn.Module):
 
 class LinearLoRAEnsemble(nn.Module):
     """
-    A parameter-efficient ensemble of k linear layers using LoRA-style low-rank adapters.
+    A parameter-efficient ensemble of k linear layers using LoRA-style low-rank
+    adapters.
 
     Each ensemble member i learns a low-rank delta (A_i, B_i) on top of the shared
     weight W:
@@ -298,7 +299,6 @@ class LinearLoRAEnsemble(nn.Module):
         rank: int,
         lora_alpha: float | None = None,
         adapter_scale: float | None = None,
-        lora_alpha: float | None = None,
     ):
         assert k > 0
         assert rank > 0
@@ -326,10 +326,9 @@ class LinearLoRAEnsemble(nn.Module):
         self.out_features = out_features
         self.k = k
         self.rank = rank
-        
         self.lora_alpha = float(rank if lora_alpha is None else lora_alpha)
         self.scaling = self.lora_alpha / rank
-        
+
         # Resolve scaling: lora_alpha / rank (canonical) or direct adapter_scale.
         # Default (neither set) → scaling = 1.0.
         if lora_alpha is not None:
@@ -366,7 +365,39 @@ class LinearLoRAEnsemble(nn.Module):
         lora = x_t @ self.lora_A.transpose(-1, -2)       # (K, B, rank)
         lora = lora @ self.lora_B.transpose(-1, -2)      # (K, B, out_features)
         # out = out + self.scaling * lora.transpose(0, 1)  # (B, K, out_features)
-        
+
+        out = out + self.scaling * lora.transpose(0, 1)
+
+        if self.bias is not None:
+            out = out + self.bias
+        return out
+
+
+class LinearNoRAInitEnsemble(LinearLoRAEnsemble):
+    """LoRA ensemble with rank-dimensional normalization applied only at init."""
+
+    def reset_parameters(self) -> None:
+        super().reset_parameters()
+        # lora_A has shape (K, rank, in_features), so dim=1 normalizes
+        # every input coordinate's projection vector over the rank dimension.
+        with torch.inference_mode():
+            self.lora_A.copy_(F.normalize(self.lora_A, p=2, dim=1))
+
+
+class LinearNoRAEnsemble(LinearLoRAEnsemble):
+    """LoRA ensemble with rank-dimensional normalization on every forward pass."""
+
+    def forward(self, x: Tensor) -> Tensor:
+        # x: (B, K, in_features)
+        assert x.ndim == 3
+
+        out = x @ self.weight.T  # (B, K, out_features)
+
+        # NoRA: normalize every input coordinate's projection vector over rank.
+        lora_A = F.normalize(self.lora_A, p=2, dim=1)
+        x_t = x.transpose(0, 1)  # (K, B, in_features)
+        lora = x_t @ lora_A.transpose(-1, -2)  # (K, B, rank)
+        lora = lora @ self.lora_B.transpose(-1, -2)  # (K, B, out_features)
         out = out + self.scaling * lora.transpose(0, 1)
 
         if self.bias is not None:

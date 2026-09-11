@@ -5,7 +5,9 @@ Usage (from paper/ directory):
     python tools/lookup_results.py <dataset>
     python tools/lookup_results.py <dataset> --seed <N>
     python tools/lookup_results.py <dataset> --arch tabm-lora
-    python tools/lookup_results.py <dataset> --compare   # side-by-side tabm vs tabm-lora
+    python tools/lookup_results.py <dataset> --arch tabm-nora-init
+    python tools/lookup_results.py <dataset> --arch tabm-nora
+    python tools/lookup_results.py <dataset> --compare
 
 Examples:
     python tools/lookup_results.py california
@@ -20,7 +22,14 @@ from pathlib import Path
 
 
 EXP_ROOT = Path('exp')
-ARCHS = ['tabm', 'tabm-lora', 'tabm-mini', 'mlp']
+ARCHS = [
+    'tabm',
+    'tabm-lora',
+    'tabm-nora-init',
+    'tabm-nora',
+    'tabm-mini',
+    'mlp',
+]
 
 
 def load_report(path: Path) -> dict:
