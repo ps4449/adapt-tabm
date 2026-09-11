@@ -297,9 +297,19 @@ class LinearLoRAEnsemble(nn.Module):
         k: int,
         rank: int,
         adapter_scale=1.0,
+        lora_alpha: float | None = None,
+        adapter_scale: float | None = None,
     ):
         assert k > 0
         assert rank > 0
+        assert not (lora_alpha is not None and adapter_scale is not None), (
+            'Specify at most one of lora_alpha or adapter_scale, not both.'
+        )
+        if lora_alpha is not None:
+            assert lora_alpha > 0
+        if adapter_scale is not None:
+            assert adapter_scale > 0
+
         super().__init__()
 
         self.weight = nn.Parameter(torch.empty(out_features, in_features))
@@ -316,11 +326,20 @@ class LinearLoRAEnsemble(nn.Module):
         self.rank = rank
         self.adapter_scale = adapter_scale
 
+        # Resolve scaling: lora_alpha / rank (canonical) or direct adapter_scale.
+        # Default (neither set) → scaling = 1.0.
+        if lora_alpha is not None:
+            self.scaling = lora_alpha / rank
+        elif adapter_scale is not None:
+            self.scaling = adapter_scale
+        else:
+            self.scaling = 1.0
+
         self.reset_parameters()
 
     def reset_parameters(self):
         init_rsqrt_uniform_(self.weight, self.in_features)
-        nn.init.normal_(self.lora_A)
+        init_rsqrt_uniform_(self.lora_A, self.in_features)
         nn.init.zeros_(self.lora_B)
         if self.bias is not None:
             bias_init = torch.empty(
@@ -343,6 +362,7 @@ class LinearLoRAEnsemble(nn.Module):
         lora = x_t @ self.lora_A.transpose(-1, -2)       # (K, B, rank)
         lora = lora @ self.lora_B.transpose(-1, -2)      # (K, B, out_features)
         out = out + self.adapter_scale * lora.transpose(0, 1)                  # (B, K, out_features)
+        out = out + self.scaling * lora.transpose(0, 1)  # (B, K, out_features)
 
         if self.bias is not None:
             out = out + self.bias
