@@ -30,6 +30,8 @@ This extracts all datasets into `paper/data/`.
 
 Available: `california`, `adult`, `churn`, `higgs-small`, `covtype2`, `otto`, `diamond`, `house`, `microsoft`, `black-friday`.
 
+`covtype2` is excluded from benchmarking — it has 500k+ rows, which makes the 15-seed x rank-sweep evaluation loop too slow for the current cluster budget.
+
 ## Config
 
 Configs are TOML files under `paper/exp/tabm-lora/<dataset>/0-evaluation/`.
