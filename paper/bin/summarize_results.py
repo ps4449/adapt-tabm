@@ -88,6 +88,8 @@ def summarize(evaluation_dir: Path, ensemble_size: int = 5) -> None:
         f'  arch_type    : {model_cfg.get("arch_type")}',
         f'  k            : {model_cfg.get("k")}',
         f'  rank         : {model_cfg.get("rank")}',
+        f'  lora_alpha   : {model_cfg.get("lora_alpha")}',
+        f'  input_scaling: {model_cfg.get("lora_input_scaling")}',
         f'  n_blocks     : {backbone_cfg.get("n_blocks")}',
         f'  d_block      : {backbone_cfg.get("d_block")}',
         f'  dropout      : {backbone_cfg.get("dropout"):.4f}',

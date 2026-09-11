@@ -120,7 +120,7 @@ class Model(nn.Module):
         ],
         k: None | int = None,
         rank: None | int = None,
-        adapter_scale: float = 1.0,
+        lora_alpha: None | float = None,
         lora_input_scaling: bool = False,
         share_training_batches: bool = DEFAULT_SHARE_TRAINING_BATCHES,
     ) -> None:
@@ -241,7 +241,8 @@ class Model(nn.Module):
                     lib.deep.LinearLoRAEnsemble,
                     k=k,
                     rank=rank,
-                    adapter_scale=adapter_scale,
+                    
+                    lora_alpha=lora_alpha,
                 )
                 if lora_input_scaling:
                     self.minimal_ensemble_adapter = lib.deep.ScaleEnsemble(
@@ -266,6 +267,7 @@ class Model(nn.Module):
         self.arch_type = arch_type
         self.k = k
         self.rank = rank
+        self.lora_alpha = lora_alpha
         self.share_training_batches = share_training_batches
 
     def forward(
@@ -784,7 +786,8 @@ def main(
 
                 candidate_idx = [*greedy_idx, head_idx]
                 candidate_score = dataset.task.calculate_metrics(
-                    {'val': head_predictions['val'][:, candidate_idx].mean(1)},
+                    {
+                        'val': head_predictions['val'][:, candidate_idx].mean(1)},
                     prediction_type,
                 )['val']['score']
                 if candidate_score > greedy_score and (
@@ -799,8 +802,10 @@ def main(
                 break
             else:
                 assert new_score is not None
+                selected_head = new_idx[-1]
                 greedy_score = new_score
                 greedy_idx = new_idx
+                greedy_mask[selected_head] = True
 
         greedy_heads_output.mkdir(parents=True)
         lib.finish(
