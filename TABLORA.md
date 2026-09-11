@@ -30,6 +30,8 @@ This extracts all datasets into `paper/data/`.
 
 Available: `california`, `adult`, `churn`, `higgs-small`, `covtype2`, `otto`, `diamond`, `house`, `microsoft`, `black-friday`.
 
+`covtype2` is excluded from benchmarking — it has 500k+ rows, which makes the 15-seed x rank-sweep evaluation loop too slow for the current cluster budget.
+
 ## Config
 
 Configs are TOML files under `paper/exp/tabm-lora/<dataset>/0-evaluation/`.
@@ -126,3 +128,9 @@ python bin/summarize_results.py exp/tabm-lora/california/0-evaluation
 | TabLoRA (ours)  | −0.4988 | −0.4915 |
 
 Score is negative RMSE, where higher score is better. The gap is expected for an untuned rank=4 first run.
+
+## Further benchmarking (in progress)
+
+Configs for the same 15-seed evaluation are set up for `adult`, `higgs-small`, `otto`, and `diamond` under `paper/exp/tabm-lora/<dataset>/0-evaluation/`, plus `paper/slurm/compare_tablora.sh` and `paper/tools/compare_results.py` to run and compare results across datasets in one pass. Results are not yet collected — this section will be filled in once runs complete on the cluster.
+
+`covtype2` is intentionally left out of this sweep (see [Datasets](#datasets)).
