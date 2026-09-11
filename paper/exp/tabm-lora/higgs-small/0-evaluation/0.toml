@@ -7,7 +7,7 @@ amp = true
 
 [data]
 cache = true
-path = "data/california"
+path = "data/higgs-small"
 num_policy = "noisy-quantile"
 
 [optimizer]

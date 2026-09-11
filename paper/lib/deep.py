@@ -297,10 +297,17 @@ class LinearLoRAEnsemble(nn.Module):
         k: int,
         rank: int,
         lora_alpha: float | None = None,
+        adapter_scale: float | None = None,
     ):
         assert k > 0
         assert rank > 0
-        assert lora_alpha is None or lora_alpha > 0
+        assert not (lora_alpha is not None and adapter_scale is not None), (
+            'Specify at most one of lora_alpha or adapter_scale, not both.'
+        )
+        if lora_alpha is not None:
+            assert lora_alpha > 0
+        if adapter_scale is not None:
+            assert adapter_scale > 0
 
         super().__init__()
 
@@ -316,16 +323,20 @@ class LinearLoRAEnsemble(nn.Module):
         self.out_features = out_features
         self.k = k
         self.rank = rank
-        
-        self.lora_alpha = float(rank if lora_alpha is None else lora_alpha)
-        self.scaling = self.lora_alpha / rank
-        
+
+        # Resolve scaling: lora_alpha / rank (canonical) or direct adapter_scale.
+        # Default (neither set) → scaling = 1.0.
+        if lora_alpha is not None:
+            self.scaling = lora_alpha / rank
+        elif adapter_scale is not None:
+            self.scaling = adapter_scale
+        else:
+            self.scaling = 1.0
+
         self.reset_parameters()
 
     def reset_parameters(self):
         init_rsqrt_uniform_(self.weight, self.in_features)
-
-        # Default normalised intialisation for A with SD 1
         init_rsqrt_uniform_(self.lora_A, self.in_features)
         nn.init.zeros_(self.lora_B)
         if self.bias is not None:
@@ -348,9 +359,7 @@ class LinearLoRAEnsemble(nn.Module):
         x_t = x.transpose(0, 1)                          # (K, B, in_features)
         lora = x_t @ self.lora_A.transpose(-1, -2)       # (K, B, rank)
         lora = lora @ self.lora_B.transpose(-1, -2)      # (K, B, out_features)
-        # out = out + lora.transpose(0, 1)                  # (B, K, out_features)
-        
-        out = out + self.scaling * lora.transpose(0, 1)
+        out = out + self.scaling * lora.transpose(0, 1)  # (B, K, out_features)
 
         if self.bias is not None:
             out = out + self.bias
