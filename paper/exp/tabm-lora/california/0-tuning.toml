@@ -24,7 +24,7 @@ weight_decay = ["_tune_", "loguniform", 1e-5, 1e-1]
 [space.model]
 arch_type = "tabm-lora"
 k = 32
-rank = 8
+rank = ["_tune_", "categorical", [2, 4, 8, 16]]
 lora_alpha = ["_tune_", "loguniform", 0.1, 2.0]
 lora_input_scaling = true
 share_training_batches = false

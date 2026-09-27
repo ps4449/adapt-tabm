@@ -287,6 +287,96 @@ vs TabM's 3.78e-2) gained another 0.0014 on ensemble over the default values.
 
 ---
 
+## Experiment #10 — 2026-09-11 (multi-dataset comparison)
+
+> Log: `logs/results/comparison_20260911_181945.txt` (TabM, computed locally) +
+> cluster comparison run (TabLoRA), consolidated via `tools/compare_results.py`.
+
+**Config:** rank=8, lora_alpha=0.5, lora_input_scaling=true, lr=1.1157e-3, wd=9.3899e-2,
+n_blocks=3, d_block=400 — same config as Experiment #9, reused as-is across all 5 datasets
+(not re-tuned per dataset; only `california` has had Optuna tuning for TabLoRA).
+
+| Dataset | TabM Test | Ens-5 | TabLoRA Test | Ens-5 | Δ Test | Δ Ens |
+|---------|-----------|-------|--------------|-------|--------|-------|
+| california | −0.4414 | −0.4402 | −0.4453 | −0.4439 | −0.0039 | −0.0037 |
+| adult | 0.8575 | 0.8583 | 0.8572 | 0.8575 | −0.0003 | −0.0008 |
+| higgs-small | 0.7394 | 0.7409 | 0.7362 | 0.7369 | −0.0032 | −0.0040 |
+| otto | 0.8275 | 0.8284 | 0.8171 | 0.8175 | −0.0104 | −0.0109 |
+| diamond | −0.1310 | −0.1307 | −0.1319 | −0.1314 | −0.0009 | −0.0007 |
+
+`california`/`diamond` scores are negative RMSE (regression, higher is better); `adult`/`higgs-small`/`otto`
+scores are accuracy-style (classification, higher is better).
+
+### Analysis
+
+**TabLoRA trails TabM on all 5 datasets**, with the config borrowed unchanged from California's
+tuned Experiment #9 — none of `adult`, `higgs-small`, `otto`, `diamond` have had their own
+Optuna sweep for TabLoRA yet.
+
+**`adult` and `diamond` are nearly matched** (Δ Ens of −0.0008 and −0.0007) — the untuned config
+already generalises well here.
+
+**`otto` shows the largest gap** (Δ Ens −0.0109), consistent with it being the only multiclass
+(9-way) dataset in the set — the shared-config assumption may hold less well for multiclass
+outputs than binary/regression.
+
+**Next step:** run per-dataset Optuna tuning (`slurm/tune_tablora.sh`) for `adult`, `higgs-small`,
+`otto`, and `diamond` the way it was already done for `california`, before drawing conclusions
+about TabLoRA's viability outside California.
+
+---
+
+## Experiment #11 — 2026-09-11 (joint rank+alpha Optuna search)
+
+> Log: `logs/results/tablora_california_20260911_225626.txt`
+> Config: `california/0-rank4-tuned-evaluation/0.toml`
+> Tuning source: SLURM job 34593 — 100-trial Optuna search over `rank` (categorical
+> 2/4/8/16), `lora_alpha`, `dropout`, `lr`, `weight_decay` jointly (see
+> `training_summary.md` for the full tuning-job rationale).
+
+**Config:** rank=4, lora_alpha=0.14822 (effective scale ≈ alpha/rank = 0.037),
+lora_input_scaling=true, dropout=0.1787, lr=1.56e-3, wd=9.30e-2, n_blocks=3, d_block=400.
+
+This is the first search to let `rank` and `lora_alpha` vary together, instead of fixing
+rank and tuning alpha alone (as Experiment #10/job 34490 did). Initiated because the
+alpha-only tune (Exp #10) did not beat the manually-chosen rank=8/alpha=0.5 combo — since
+`lora_alpha`'s effective contribution is `alpha/rank`, tuning alpha without rank searches
+only half of a coupled quantity.
+
+### Summary
+
+| Model | Mean Test | Std (Test) | Ensemble-5 Test | n_parameters |
+|-------|-----------|------------|------------------|--------------|
+| TabM (baseline) | −0.4414 | ±0.0012 | −0.4402 | 438,688 |
+| TabLoRA rank=8 (Exp #9, previous best) | −0.4448 | ±0.0009 | −0.4434 | 888,480 |
+| **TabLoRA rank=4 (this run)** | **−0.4439** | ±0.0013 | **−0.4424** | **631,712** |
+| vs TabM | −0.0025 | +0.0001 | −0.0022 | +44% |
+| vs Exp #9 | +0.0009 | +0.0004 | +0.0010 | −29% |
+
+### Analysis
+
+**Best TabLoRA result to date**, on both mean test and ensemble score, and the smallest gap
+to TabM yet reached (−0.0025 mean / −0.0022 ensemble, down from Exp #9's −0.0034/−0.0032).
+
+**Achieved with 29% fewer parameters than Exp #9** (631,712 vs 888,480) — the joint search
+found a more parameter-efficient operating point (lower rank, smaller effective adapter
+scale), not just a marginally better one. Std (±0.0013) remains close to TabM's (±0.0012),
+confirming training stability holds at this smaller rank too.
+
+**Winner's-curse gap confirmed.** The single best-trial test score reported by Optuna during
+tuning was −0.4421 (near-parity with TabM); the true 15-seed mean is −0.4439, a 0.0018
+regression. The best-of-100-trials number was optimistic, as expected — trials are selected
+on validation score using one seed, so some regression toward the true mean is normal. Future
+"best trial" numbers should be treated as upper bounds pending full 15-seed confirmation, not
+as final results.
+
+**Still short of TabM**, but via a qualitatively different mechanism (rank=4, alpha≈0.037)
+than any prior attempt — suggests the search space around rank=8/alpha=0.5 was not actually
+optimal, and supports doing this same joint search for the other 4 datasets rather than
+reusing the California-tuned config as Experiment #10 did.
+
+---
+
 ## Master Summary Table
 
 > All scores are negative RMSE — higher is better.
@@ -304,3 +394,5 @@ vs TabM's 3.78e-2) gained another 0.0014 on ensemble over the default values.
 | 7 | 20260910_200309 | 8 | 0.25 (fixed) | Yes | 5.57e-4 | −0.4566 | −0.0152 | −0.4557 | −0.0155 |
 | 8 | 20260911_025319 | 8 | alpha=0.5 (0.0625) | Yes | 8.72e-4 | −0.4463 | −0.0049 | −0.4448 | −0.0046 |
 | **9** | **20260911_042935** | **8** | **alpha=0.5 (0.0625)** | **Yes** | **1.12e-3** | **−0.4448** | **−0.0034** | **−0.4434** | **−0.0032** |
+| 10 | 20260911_144735 | 8 | alpha=0.2774 (0.0347, Optuna, rank fixed) | Yes | 8.23e-4 | −0.4453 | −0.0039 | −0.4439 | −0.0037 |
+| **11** | **20260911_225626** | **4** | **alpha=0.1482 (0.0371, Optuna, rank+alpha joint)** | **Yes** | **1.56e-3** | **−0.4439** | **−0.0025** | **−0.4424** | **−0.0022** |
