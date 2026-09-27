@@ -9,6 +9,7 @@ amp = true
 cache = true
 path = "data/diamond"
 num_policy = "noisy-quantile"
+cat_policy = "ordinal"
 
 [optimizer]
 type = "AdamW"
