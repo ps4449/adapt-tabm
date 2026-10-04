@@ -296,6 +296,7 @@ class LinearLoRAEnsemble(nn.Module):
         *,
         k: int,
         rank: int,
+        adapter_scale=1.0,
         lora_alpha: float | None = None,
         adapter_scale: float | None = None,
     ):
@@ -323,6 +324,7 @@ class LinearLoRAEnsemble(nn.Module):
         self.out_features = out_features
         self.k = k
         self.rank = rank
+        self.adapter_scale = adapter_scale
 
         # Resolve scaling: lora_alpha / rank (canonical) or direct adapter_scale.
         # Default (neither set) → scaling = 1.0.
@@ -359,6 +361,7 @@ class LinearLoRAEnsemble(nn.Module):
         x_t = x.transpose(0, 1)                          # (K, B, in_features)
         lora = x_t @ self.lora_A.transpose(-1, -2)       # (K, B, rank)
         lora = lora @ self.lora_B.transpose(-1, -2)      # (K, B, out_features)
+        out = out + self.adapter_scale * lora.transpose(0, 1)                  # (B, K, out_features)
         out = out + self.scaling * lora.transpose(0, 1)  # (B, K, out_features)
 
         if self.bias is not None:

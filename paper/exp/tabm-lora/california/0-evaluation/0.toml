@@ -18,6 +18,8 @@ weight_decay = 0.09389867213262516
 [model]
 arch_type = "tabm-lora"
 k = 32
+rank = 4
+adapter_scale = 1.0
 rank = 8
 lora_alpha = 0.5
 lora_input_scaling = true

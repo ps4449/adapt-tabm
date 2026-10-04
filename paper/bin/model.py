@@ -120,6 +120,7 @@ class Model(nn.Module):
         ],
         k: None | int = None,
         rank: None | int = None,
+        adapter_scale: float = 1.0,
         lora_alpha: None | float = None,
         adapter_scale: None | float = None,
         lora_input_scaling: bool = False,
