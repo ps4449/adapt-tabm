@@ -9,6 +9,7 @@ amp = true
 cache = true
 path = "data/covtype2"
 num_policy = "noisy-quantile"
+cat_policy = "ordinal"
 
 [optimizer]
 type = "AdamW"
